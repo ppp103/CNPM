@@ -41,11 +41,11 @@
                         <div class="m-l-auto col-md-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h2 class="m-t-20">Sign In</h2>
-                                    <p class="m-b-30">Enter your credential to get access</p>
+                                    <h2 class="m-t-20">Đăng ký</h2>
+                                    <p class="m-b-30">Nhập thông tin xác thực của bạn để có quyền truy cập</p>
                                     <form action= "/CNPM/finalbtl/mvc/controllers/CRUD/admin/xulydangky.php" method="POST">
                                         <div class="form-group">
-                                            <label class="font-weight-semibold" for="tenDangNhap">Username:</label>
+                                            <label class="font-weight-semibold" for="tenDangNhap">Tên đăng nhập:</label>
                                             <input type="text" class="form-control" id="tenDangNhap" placeholder="Tên đăng nhập" name="tenDangNhap">
                                         </div>
                                         <div class="form-group">
@@ -53,7 +53,7 @@
                                             <input type="email" class="form-control" id="email" placeholder="Email" name="email">
                                         </div>
                                         <div class="form-group">
-                                            <label class="font-weight-semibold" for="matKhau">Password:</label>
+                                            <label class="font-weight-semibold" for="matKhau">Mật khẩu:</label>
                                             <input type="password" class="form-control" id="matKhau" placeholder="Mật khẩu" name="matKhau">
                                         </div>
                                         <!-- <div class="form-group">
@@ -64,9 +64,9 @@
                                             <div class="d-flex align-items-center justify-content-between p-t-15">
                                                 <div class="checkbox">
                                                     <input id="checkbox" type="checkbox">
-                                                    <label for="checkbox"><span>I have read the <a href="#">agreement</a></span></label>
+                                                    <label for="checkbox"><span>Tôi đã đọc <a href="#">thoả thuận</a></span></label>
                                                 </div>
-                                                <button class="btn btn-primary">Sign In</button>
+                                                <button class="btn btn-primary">Đăng ký</button>
                                             </div>
                                         </div>
                                     </form>

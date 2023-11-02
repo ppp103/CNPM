@@ -5,15 +5,21 @@
     // require ('../../../../mvc/models/dbCon.php');
 
     require ($_SERVER["DOCUMENT_ROOT"].'/CNPM/finalbtl/mvc/models/dbCon.php');
-    // $result = $_SERVER["DOCUMENT_ROOT"];
-    // echo $result;
+
+    // mã hoá mật khẩu
+    $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
 
     //Viết lệnh sql để thêm dữ liệu
     $dangkysql = "INSERT INTO taikhoan (tenDangNhap, matKhau, email)
-        VALUES ('$tenDN', '$pass', '$email')";
+        VALUES ('$tenDN', '$hashedPassword', '$email')";
 
-//     //Thực thi câu lệnh thêm
-    mysqli_query($conn, $dangkysql);
+    //Thực thi câu lệnh thêm
+    if(mysqli_query($conn, $dangkysql)) {
+        header("Location: ../../../../admin/dangnhap");
+        exit();
+    } else {
+        echo "Lỗi: " . $dangkysql . "<br>" . mysqli_error($conn);
+    }
 
-
+    mysqli_close($conn);
  ?>
