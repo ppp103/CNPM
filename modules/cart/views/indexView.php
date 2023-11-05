@@ -1,103 +1,69 @@
 <?php
 get_header();
 ?>
-
-<div id="main-content-wp" class="cart-page">
-    <div class="section" id="breadcrumb-wp">
-        <div class="wp-inner">
-            <div class="section-detail">
-                <ul class="list-item clearfix">
-                    <li>
-                        <a href="?page=home" title="">Trang chủ</a>
-                    </li>
-                    <li>
-                        <a href="" title="">Sản phẩm làm đẹp da</a>
-                    </li>
-                </ul>
+<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/parallax/bgparallax-07.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="tg-innerbannercontent">
+                    <h1>Giỏ hàng</h1>
+                    <ol class="tg-breadcrumb">
+                        <li><a href="javascript:void(0);">Trang chủ</a></li>
+                        <li class="tg-active">Giỏ hàng</li>
+                    </ol>
+                </div>
             </div>
         </div>
     </div>
-    <div id="wrapper" class="wp-inner clearfix">
-        <div class="section" id="info-cart-wp">
-            <div class="section-detail table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <td>Mã sản phẩm</td>
-                            <td>Ảnh sản phẩm</td>
-                            <td>Tên sản phẩm</td>
-                            <td>Giá sản phẩm</td>
-                            <td>Số lượng</td>
-                            <td colspan="2">Thành tiền</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>HCA00031</td>
-                            <td>
-                                <a href="" title="" class="thumb">
-                                    <img src="public/images/img-pro-11.png" alt="">
-                                </a>
-                            </td>
-                            <td>
-                                <a href="" title="" class="name-product">Sony Express X6</a>
-                            </td>
-                            <td>500.000đ</td>
-                            <td>
-                                <input type="text" name="num-order" value="1" class="num-order">
-                            </td>
-                            <td>500.000đ</td>
-                            <td>
-                                <a href="" title="" class="del-product"><i class="fa fa-trash-o"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>HCA00032</td>
-                            <td>
-                                <a href="" title="" class="thumb">
-                                    <img src="public/images/img-pro-23.png" alt="">
-                                </a>
-                            </td>
-                            <td>
-                                <a href="" title="" class="name-product">Laptop Probook HP 4430s</a>
-                            </td>
-                            <td>350.000đ</td>
-                            <td>
-                                <input type="text" name="num-order" value="1" class="num-order">
-                            </td>
-                            <td>350.000đ</td>
-                            <td>
-                                <a href="" title="" class="del-product"><i class="fa fa-trash-o"></i></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="7">
-                                <div class="clearfix">
-                                    <p id="total-price" class="fl-right">Tổng giá: <span>850.000đ</span></p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="7">
-                                <div class="clearfix">
-                                    <div class="fl-right">
-                                        <a href="" title="" id="update-cart">Cập nhật giỏ hàng</a>
-                                        <a href="?page=checkout" title="" id="checkout-cart">Thanh toán</a>
+</div>
+<!--************************************
+		Inner Banner End
+*************************************-->
+
+<div class="colorlib-product">
+    <div class="container">
+        <div class="row row-pb-lg">
+            <div id="cart-wrapper" class="col-md-12">
+                <div class="product-name d-flex">
+                    <div class="one-forth text-left px-4" style="padding-left: 20px">
+                        <span>Sách</span>
+                    </div>
+                    <div class="one-eight text-center">
+                        <span>Giá</span>
+                    </div>
+                    <div class="one-eight text-center">
+                        <span>Số lượng</span>
+                    </div>
+                    <div class="one-eight text-center">
+                        <span>Thành tiền</span>
+                    </div>
+                    <div class="one-eight text-center px-4">
+                        <span>Xóa</span>
+                    </div>
+                </div>
+
+                <div id="cart-products"></div>
+            </div>
+            <div class="row row-pb-lg">
+                <div class="col-md-12">
+                    <div class="total-wrap">
+                        <div class="row">
+                            <div class="col-sm-4 text-center">
+                                <div class="total">
+                                    <div class="grand-total">
+                                        <p>
+                                            <span><strong>Tổng:</strong></span>
+                                            <span id="cart-total">Tổng tiền VNĐ</span>
+                                        </p>
                                     </div>
                                 </div>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-        <div class="section" id="action-cart-wp">
-            <div class="section-detail">
-                <p class="title">Click vào <span>“Cập nhật giỏ hàng”</span> để cập nhật số lượng. Nhập vào số lượng <span>0</span> để xóa sản phẩm khỏi giỏ hàng. Nhấn vào thanh toán để hoàn tất mua hàng.</p>
-                <a href="?page=home" title="" id="buy-more">Mua tiếp</a><br/>
-                <a href="" title="" id="delete-cart">Xóa giỏ hàng</a>
+                            </div>
+                            <div class="col-sm-8">
+                                <a href="checkout.html" class="button" style="margin-right: 70px">Thanh toán</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

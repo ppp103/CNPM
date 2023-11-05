@@ -1,107 +1,73 @@
 <?php
 get_header();
 ?>
+<div id="tg-wrapper" class="tg-wrapper tg-haslayout">
+    <div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/parallax/bgparallax-07.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="tg-innerbannercontent">
+                        <h1>Thanh toán</h1>
+                        <ol class="tg-breadcrumb">
+                            <li><a href="javascript:void(0);">Trang chủ</a></li>
+                            <li class="tg-active">Thanh toán</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main section starts -->
+    <div class="container">
+        <div class="m-b-100" style="height: 300px"></div>
+        <div class="billing_details">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Thông tin khách hàng</h3>
+                    <form id="client-form" class="row contact_form" action="#" method="post" novalidate="novalidate" value="">
+                        <div class="col-sm-6 form-group">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Tên" value="" />
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input type="text" class="form-control" id="number" name="number" placeholder="Số điện thoại" value="" />
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input type="text" class="form-control" id="email" name="compemailany" placeholder="Email" value="" />
+                        </div>
 
-<div id="main-content-wp" class="checkout-page">
-    <div class="section" id="breadcrumb-wp">
-        <div class="wp-inner">
-            <div class="section-detail">
-                <ul class="list-item clearfix">
-                    <li>
-                        <a href="?page=home" title="">Trang chủ</a>
-                    </li>
-                    <li>
-                        <a href="" title="">Thanh toán</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div id="wrapper" class="wp-inner clearfix">
-        <div class="section" id="customer-info-wp">
-            <div class="section-head">
-                <h1 class="section-title">Thông tin khách hàng</h1>
-            </div>
-            <div class="section-detail">
-                <form method="POST" action="" name="form-checkout">
-                    <div class="form-row clearfix">
-                        <div class="form-col fl-left">
-                            <label for="fullname">Họ tên</label>
-                            <input type="text" name="fullname" id="fullname">
+                        <div class="col-md-12 form-group">
+                            <input type="text" class="form-control" id="address" name="add1" placeholder="Địa chỉ" value="" />
                         </div>
-                        <div class="form-col fl-right">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email">
-                        </div>
-                    </div>
-                    <div class="form-row clearfix">
-                        <div class="form-col fl-left">
-                            <label for="address">Địa chỉ</label>
-                            <input type="text" name="address" id="address">
-                        </div>
-                        <div class="form-col fl-right">
-                            <label for="phone">Số điện thoại</label>
-                            <input type="tel" name="phone" id="phone">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-col">
-                            <label for="notes">Ghi chú</label>
-                            <textarea name="note"></textarea>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="section" id="order-review-wp">
-            <div class="section-head">
-                <h1 class="section-title">Thông tin đơn hàng</h1>
-            </div>
-            <div class="section-detail">
-                <table class="shop-table">
-                    <thead>
-                        <tr>
-                            <td>Sản phẩm</td>
-                            <td>Tổng</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="cart-item">
-                            <td class="product-name">Son môi nữ cá tính<strong class="product-quantity">x 1</strong></td>
-                            <td class="product-total">350.000đ</td>
-                        </tr>
-                        <tr class="cart-item">
-                            <td class="product-name">Đồ tẩy trang nhập khẩu Mỹ<strong class="product-quantity">x 2</strong></td>
-                            <td class="product-total">500.000đ</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr class="order-total">
-                            <td>Tổng đơn hàng:</td>
-                            <td><strong class="total-price">800.000đ</strong></td>
-                        </tr>
-                    </tfoot>
-                </table>
-                <div id="payment-checkout-wp">
-                    <ul id="payment_methods">
-                        <li>
-                            <input type="radio" id="direct-payment" name="payment-method" value="direct-payment">
-                            <label for="direct-payment">Thanh toán tại cửa hàng</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="payment-home" name="payment-method" value="payment-home">
-                            <label for="payment-home">Thanh toán tại nhà</label>
-                        </li>
-                    </ul>
+                    </form>
                 </div>
-                <div class="place-order-wp clearfix">
-                    <input type="submit" id="order-now" value="Đặt hàng">
+                <div class="col-lg-4">
+                    <div class="order_box">
+                        <h2>Chi tiết đơn hàng</h2>
+                        <ul class="list">
+                            <li>
+                                <a href="#">Sản phẩm <span>Thành tiền</span></a>
+                            </li>
+                        </ul>
+                        <div class="grand-total">
+                            <p>
+                                <span><strong>Tổng:</strong></span>
+                                <span class="tong-gio-hang">Tổng tiền VNĐ</span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-4 text-center">
+            <button id="checkout" href="checkout.html" class="button" style="margin-left: 20px">
+                Thanh toán
+            </button>
+        </div>
+    </div>
+    <!-- Main section ends -->
 </div>
-
 <?php
 get_footer();
 ?>
