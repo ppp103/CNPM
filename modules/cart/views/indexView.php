@@ -42,7 +42,37 @@ get_header();
                     </div>
                 </div>
 
-                <div id="cart-products"></div>
+                <div id="cart-products">
+                    <div class="product-cart d-flex">
+                        <div class="one-forth">
+                            <div class="product-img" style="background-image: url('public/images/books/img-01.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+                            </div>
+                            <div class="display-tc">
+                                <h3>Tên sách</h3>
+                            </div>
+                        </div>
+                        <div class="one-eight text-center">
+                            <div class="display-tc">
+                                <span class="price">123 VNĐ</span>
+                            </div>
+                        </div>
+                        <div class="one-eight text-center">
+                            <div class="display-tc">
+                                <input type="number" name="quantity" data-price="123" class="form-control input-number text-center quantity" value="1" min="1" max="100">
+                            </div>
+                        </div>
+                        <div class="one-eight text-center">
+                            <div class="display-tc">
+                                <span class="product-total tong-tien">123 VNĐ</span>
+                            </div>
+                        </div>
+                        <div class="one-eight text-center">
+                            <div class="display-tc">
+                                <a data-maSach="S01" class="closed remove-cart"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row row-pb-lg">
                 <div class="col-md-12">
@@ -52,8 +82,8 @@ get_header();
                                 <div class="total">
                                     <div class="grand-total">
                                         <p>
-                                            <span><strong>Tổng:</strong></span>
-                                            <span id="cart-total">Tổng tiền VNĐ</span>
+                                            <span><strong>Tổng: 123 VNĐ</strong></span>
+                                            <span id="cart-total">123 VNĐ</span>
                                         </p>
                                     </div>
                                 </div>
@@ -68,7 +98,6 @@ get_header();
         </div>
     </div>
 </div>
-
 <?php
 get_footer();
 ?>
