@@ -1,16 +1,26 @@
 <?php
 function construct()
 {
+    load_model('index');
 }
 
 function indexAction()
 {
-    load_view('index');
+    $books = get_list_products();
+    $categories = get_list_categories();
+    $data = [
+        'books' => $books,
+        'categories' => $categories,
+    ];
+    load_view('index', $data);
 }
 
 function detailAction()
 {
-    load_view('detail');
+    $id = $_GET['id'];
+    $book = get_product_by_id($id);
+    $data = ['book' => $book];
+    load_view('detail', $data);
 }
 
 // function categoryProductAction(){

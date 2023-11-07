@@ -8,6 +8,12 @@ function get_list_products()
     return $books;
 }
 
+function get_product_by_id($id)
+{
+    $book = db_fetch_row("select sach.id, tenSach, sach.anh, giaBan, moTa, ngayCapNhat, soLuongCon, tenTheLoai, tenTacGia from sach join theloai on sach.theloai_id = theloai.id join tacgia on sach.tacgia_id = tacgia.id where sach.id = {$id}");
+    return $book;
+}
+
 function get_list_categories()
 {
     $result = db_fetch_array("select * from theloai");

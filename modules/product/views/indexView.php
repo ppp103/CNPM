@@ -1,6 +1,7 @@
 <?php
-$books = get_list_products();
-$categories = get_list_categories();
+// $books = get_list_products();
+// $categories = get_list_categories();
+// show_array($books);
 get_header();
 ?>
 
@@ -42,12 +43,11 @@ get_header();
                                                         </ul>
                                                         <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
                                                         <div class="tg-booktitle">
-                                                            <h3><a><?php echo $book['tenSach'] ?></a></h3>
+                                                            <h3><a href="<?php echo $book['url'] ?>"><?php echo $book['tenSach'] ?></a></h3>
                                                         </div>
                                                         <span class="tg-bookwriter">Bởi: <a href="javascript:void(0);"><?php echo $book['tenTacGia'] ?></a></span>
                                                         <span class="tg-stars"><span></span></span>
                                                         <span class="tg-bookprice">
-                                                            <!-- number_format($amount, 2, '.', ',') -->
                                                             <ins><?php echo number_format($book['giaBan'], 0, '.', ',') ?> VNĐ</ins>
                                                         </span>
                                                         <a class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="@sp.MaSach" href="javascript:void(0);">
@@ -269,6 +269,6 @@ get_header();
 
 <?php
 get_footer();
-show_array($books);
+show_array($data);
 
 ?>

@@ -1,7 +1,8 @@
 <?php
 get_header();
+
 ?>
-<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="../User/Images/parallax/bgparallax-07.jpg">
+<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="public/Images/parallax/bgparallax-07.jpg">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -10,7 +11,7 @@ get_header();
                     <ol class="tg-breadcrumb">
                         <li><a href="javascript:void(0);">Trang chủ</a></li>
                         <li><a href="javascript:void(0);">Sách</a></li>
-                        <li class="tg-active">@Model.TenSach</li>
+                        <li class="tg-active"></li>
                     </ol>
                 </div>
             </div>
@@ -28,57 +29,19 @@ get_header();
                 <div id="tg-twocolumns" class="tg-twocolumns">
                     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
                         <div id="tg-content" class="tg-content">
-                            <div class="tg-featurebook alert" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <div class="tg-featureditm">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
-                                            <figure><img src="../User/Images/img-04.png" alt="image description"></figure>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                                            <div class="tg-featureditmcontent">
-                                                <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
-                                                <div class="tg-booktitle">
-                                                    <h3><a href="javascript:void(0);">Things To Know About Green Flat Design</a></h3>
-                                                </div>
-                                                <span class="tg-bookwriter">Bởi: <a href="javascript:void(0);">Farrah Whisenhunt</a></span>
-                                                <span class="tg-stars"><span></span></span>
-                                                <div class="tg-priceandbtn">
-                                                    <span class="tg-bookprice">
-                                                        <ins>230.000 VNĐ</ins>
-                                                        <del>302.000 VNĐ</del>
-                                                    </span>
-                                                    <a class="tg-btn tg-btnstyletwo tg-active">
-                                                        <i class="fa fa-shopping-basket"></i>
-                                                        <em>Thêm vào giỏ</em>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="tg-productdetail">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                         <div class="tg-postbook">
-                                            <figure class="tg-featureimg"><img src="@Url.Content(" ../images/books/" + @Model.Anh)" alt="image description"></figure>
+                                            <figure class="tg-featureimg"><img src="public/images/books/<?php echo $book['anh'] ?>" alt="image description"></figure>
                                             <div class="tg-postbookcontent">
                                                 <span class="tg-bookprice">
-                                                    <ins>@Model.GiaBan.Value.ToString("#,##0") VNĐ</ins>
+                                                    <ins> <?php echo $book['giaBan'] ?> VNĐ</ins>
                                                 </span>
                                                 <ul class="tg-delevrystock">
                                                     <li><i class="icon-rocket"></i><span>Freeship toàn cầu</span></li>
                                                     <li><i class="icon-checkmark-circle"></i><span>Xuất kho từ Mỹ sau 2 ngày</span></li>
-                                                    @if(@Model.SoLuongCon > 0){
                                                     <li><i class="icon-store"></i><span>Trạng thái: <em>Còn hàng</em></span></li>
-                                                    }
-                                                    else
-                                                    {
-                                                    <li><i class="icon-store"></i><span>Status: <em>Hết hàng</em></span></li>
-                                                    }
                                                 </ul>
                                                 <div class="tg-quantityholder">
                                                     <em class="minus">-</em>
@@ -96,13 +59,13 @@ get_header();
                                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                                         <div class="tg-productcontent">
                                             <ul class="tg-bookscategories">
-                                                <li><a asp-controller="Home" asp-action="HienThiTheoDanhMuc" asp-route-madm="@Model.MaDm">@Model.MaDmNavigation.TenDm</a></li>
+                                                <li><a><?php echo $book['tenTheLoai'] ?></a></li>
                                             </ul>
                                             <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
                                             <div class="tg-booktitle">
-                                                <h3>@Model.TenSach</h3>
+                                                <h3><?php echo $book['tenSach'] ?></h3>
                                             </div>
-                                            <span class="tg-bookwriter">Bởi: <a href="javascript:void(0);">@Model.MaTgNavigation.TenTg</a></span>
+                                            <span class="tg-bookwriter">Bởi: <a href="javascript:void(0);"><?php echo $book['tenTacGia'] ?></a></span>
                                             <span class="tg-stars"><span></span></span>
                                             <span class="tg-addreviews"><a href="javascript:void(0);">Nhận xét</a></span>
                                             <div class="tg-share">
@@ -128,7 +91,7 @@ get_header();
                                             </ul>
                                             <div class="tg-alsoavailable">
                                                 <figure>
-                                                    <img src="../User/Images/img-02.jpg" alt="image description">
+                                                    <img src="public/Images/img-02.jpg" alt="image description">
                                                     <figcaption>
                                                         <h3>Các bản khác:</h3>
                                                         <ul>
@@ -159,7 +122,7 @@ get_header();
                                                             voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                                                         </p>
                                                         <figure class="tg-alignleft">
-                                                            <img src="../User/Images/placeholdervtwo.jpg" alt="image description">
+                                                            <img src="public/Images/placeholdervtwo.jpg" alt="image description">
                                                             <iframe src="https://www.youtube.com/embed/aLwpuDpZm1k?rel=0&amp;controls=0&amp;showinfo=0"></iframe>
                                                         </figure>
                                                         <ul class="tg-liststyle">
@@ -184,7 +147,7 @@ get_header();
                                                             voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                                                         </p>
                                                         <figure class="tg-alignleft">
-                                                            <img src="../User/Images/placeholdervtwo.jpg" alt="image description">
+                                                            <img src="public/Images/placeholdervtwo.jpg" alt="image description">
                                                             <iframe src="https://www.youtube.com/embed/aLwpuDpZm1k?rel=0&amp;controls=0&amp;showinfo=0"></iframe>
                                                         </figure>
                                                         <ul class="tg-liststyle">
@@ -213,7 +176,7 @@ get_header();
                                             </div>
                                             <div class="tg-authorbox">
                                                 <figure class="tg-authorimg">
-                                                    <img src="@Url.Content(" ../User/Images/author/" + Model.MaTgNavigation.Anh)" alt="image description">
+                                                    <img src="public/Images/author/" alt="image description">
                                                 </figure>
                                                 <div class="tg-authorinfo">
                                                     <div class="tg-authorhead">
@@ -257,8 +220,8 @@ get_header();
                                                     <div class="tg-postbook">
                                                         <figure class="tg-featureimg">
                                                             <div class="tg-bookimg">
-                                                                <div class="tg-frontcover"><img src="@Url.Content(" ../images/books/" + @a.Anh)" alt="image description"></div>
-                                                                <div class="tg-backcover"><img src="@Url.Content(" ../images/books/" + @a.Anh)" alt="image description"></div>
+                                                                <div class="tg-frontcover"><img src="../images/books/" alt="image description"></div>
+                                                                <div class="tg-backcover"><img src="../images/books/" alt="image description"></div>
                                                             </div>
                                                             <a class="tg-btnaddtowishlist" href="javascript:void(0);">
                                                                 <i class="icon-heart"></i>
@@ -326,7 +289,7 @@ get_header();
                                     <ul>
                                         <li>
                                             <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="../User/Images/products/img-04.jpg" alt="image description"></a></figure>
+                                                <figure><a href="javascript:void(0);"><img src="public/Images/products/img-04.jpg" alt="image description"></a></figure>
                                                 <div class="tg-postcontent">
                                                     <div class="tg-posttitle">
                                                         <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
@@ -337,7 +300,7 @@ get_header();
                                         </li>
                                         <li>
                                             <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="../User/Images/products/img-05.jpg" alt="image description"></a></figure>
+                                                <figure><a href="javascript:void(0);"><img src="public/Images/products/img-05.jpg" alt="image description"></a></figure>
                                                 <div class="tg-postcontent">
                                                     <div class="tg-posttitle">
                                                         <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
@@ -348,7 +311,7 @@ get_header();
                                         </li>
                                         <li>
                                             <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="../User/Images/products/img-06.jpg" alt="image description"></a></figure>
+                                                <figure><a href="javascript:void(0);"><img src="public/Images/products/img-06.jpg" alt="image description"></a></figure>
                                                 <div class="tg-postcontent">
                                                     <div class="tg-posttitle">
                                                         <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
@@ -359,7 +322,7 @@ get_header();
                                         </li>
                                         <li>
                                             <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="../User/Images/products/img-07.jpg" alt="image description"></a></figure>
+                                                <figure><a href="javascript:void(0);"><img src="public/Images/products/img-07.jpg" alt="image description"></a></figure>
                                                 <div class="tg-postcontent">
                                                     <div class="tg-posttitle">
                                                         <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
@@ -379,55 +342,55 @@ get_header();
                                     <ul>
                                         <li>
                                             <figure>
-                                                <img src="../User/Images/instagram/img-01.jpg" alt="image description">
+                                                <img src="public/Images/instagram/img-01.jpg" alt="image description">
                                                 <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
                                             </figure>
                                         </li>
                                         <li>
                                             <figure>
-                                                <img src="../User/Images/instagram/img-02.jpg" alt="image description">
+                                                <img src="public/Images/instagram/img-02.jpg" alt="image description">
                                                 <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
                                             </figure>
                                         </li>
                                         <li>
                                             <figure>
-                                                <img src="../User/Images/instagram/img-03.jpg" alt="image description">
+                                                <img src="public/Images/instagram/img-03.jpg" alt="image description">
                                                 <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
                                             </figure>
                                         </li>
                                         <li>
                                             <figure>
-                                                <img src="../User/Images/instagram/img-04.jpg" alt="image description">
+                                                <img src="public/Images/instagram/img-04.jpg" alt="image description">
                                                 <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
                                             </figure>
                                         </li>
                                         <li>
                                             <figure>
-                                                <img src="../User/Images/instagram/img-05.jpg" alt="image description">
+                                                <img src="public/Images/instagram/img-05.jpg" alt="image description">
                                                 <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
                                             </figure>
                                         </li>
                                         <li>
                                             <figure>
-                                                <img src="../User/Images/instagram/img-06.jpg" alt="image description">
+                                                <img src="public/Images/instagram/img-06.jpg" alt="image description">
                                                 <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
                                             </figure>
                                         </li>
                                         <li>
                                             <figure>
-                                                <img src="../User/Images/instagram/img-07.jpg" alt="image description">
+                                                <img src="public/Images/instagram/img-07.jpg" alt="image description">
                                                 <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
                                             </figure>
                                         </li>
                                         <li>
                                             <figure>
-                                                <img src="../User/Images/instagram/img-08.jpg" alt="image description">
+                                                <img src="public/Images/instagram/img-08.jpg" alt="image description">
                                                 <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
                                             </figure>
                                         </li>
                                         <li>
                                             <figure>
-                                                <img src="../User/Images/instagram/img-09.jpg" alt="image description">
+                                                <img src="public/Images/instagram/img-09.jpg" alt="image description">
                                                 <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
                                             </figure>
                                         </li>
@@ -442,7 +405,7 @@ get_header();
                                     <ul>
                                         <li>
                                             <div class="tg-author">
-                                                <figure><a href="javascript:void(0);"><img src="../User/Images/author/imag-03.jpg" alt="image description"></a></figure>
+                                                <figure><a href="javascript:void(0);"><img src="public/Images/author/imag-03.jpg" alt="image description"></a></figure>
                                                 <div class="tg-authorcontent">
                                                     <h2><a href="javascript:void(0);">Jude Morphew</a></h2>
                                                     <span>21,658 Sách xuất bản</span>
@@ -451,7 +414,7 @@ get_header();
                                         </li>
                                         <li>
                                             <div class="tg-author">
-                                                <figure><a href="javascript:void(0);"><img src="../User/Images/author/imag-04.jpg" alt="image description"></a></figure>
+                                                <figure><a href="javascript:void(0);"><img src="public/Images/author/imag-04.jpg" alt="image description"></a></figure>
                                                 <div class="tg-authorcontent">
                                                     <h2><a href="javascript:void(0);">Jude Morphew</a></h2>
                                                     <span>21,658 Sách xuất bản</span>
@@ -460,7 +423,7 @@ get_header();
                                         </li>
                                         <li>
                                             <div class="tg-author">
-                                                <figure><a href="javascript:void(0);"><img src="../User/Images/author/imag-05.jpg" alt="image description"></a></figure>
+                                                <figure><a href="javascript:void(0);"><img src="public/Images/author/imag-05.jpg" alt="image description"></a></figure>
                                                 <div class="tg-authorcontent">
                                                     <h2><a href="javascript:void(0);">Jude Morphew</a></h2>
                                                     <span>21,658 Sách xuất bản</span>
@@ -469,7 +432,7 @@ get_header();
                                         </li>
                                         <li>
                                             <div class="tg-author">
-                                                <figure><a href="javascript:void(0);"><img src="../User/Images/author/imag-06.jpg" alt="image description"></a></figure>
+                                                <figure><a href="javascript:void(0);"><img src="public/Images/author/imag-06.jpg" alt="image description"></a></figure>
                                                 <div class="tg-authorcontent">
                                                     <h2><a href="javascript:void(0);">Jude Morphew</a></h2>
                                                     <span>21,658 Sách xuất bản</span>
@@ -493,4 +456,5 @@ get_header();
 
 <?php
 get_footer();
+show_array($book);
 ?>
