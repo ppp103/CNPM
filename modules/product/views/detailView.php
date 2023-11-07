@@ -32,6 +32,7 @@ get_header();
                             <div class="tg-productdetail">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                        <form method="post" action="?mod=cart">
                                         <div class="tg-postbook">
                                             <figure class="tg-featureimg"><img src="public/images/books/<?php echo $book['anh'] ?>" alt="image description"></figure>
                                             <div class="tg-postbookcontent">
@@ -48,13 +49,18 @@ get_header();
                                                     <input type="text" class="result" value="0" id="quantity1" name="quantity">
                                                     <em class="plus">+</em>
                                                 </div>
-                                                <a class="tg-btn tg-active tg-btn-lg add-to-cart">Thêm vào giỏ</a>
+                                                <input class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="@sp.MaSach" name="addcart"  type="submit" value="Đặt Hàng"/>
+                                                <input id="MaSach" name="id" data-id="<?php echo $book['id'] ?>" type="hidden" value="<?php echo $book['id'] ?>"/>
+                                                <input type="hidden" name="anh" value="<?php echo $book['anh'] ?>"/>
+                                                <input type="hidden" name="tenSach" value="<?php echo $book['tenSach'] ?>"/>
+                                                <input type="hidden" name="giaBan" value="<?php echo $book['giaBan']?>" />
+                                                <input type="hidden" name="soluong" value="1">
+
                                                 <input asp-for="MaSach" type="hidden" />
-                                                <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                                    <span>Yêu thích</span>
-                                                </a>
+                                               
                                             </div>
                                         </div>
+                                        </form>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                                         <div class="tg-productcontent">

@@ -44,16 +44,45 @@ get_header();
                     <div class="order_box">
                         <h2>Chi tiết đơn hàng</h2>
                         <ul class="list">
-                            <li>
-                                <a href="#">Sản phẩm <span>Thành tiền</span></a>
-                            </li>
+                            <?php 
+                             if (session_status() === PHP_SESSION_NONE) {
+                                session_start();
+                                }
+                            for($i=0; $i<sizeof($_SESSION['giohang']);$i++){
+                                echo ' <li>
+                                <a> '.$_SESSION['giohang'][$i][2].'<span class="middle">'.$_SESSION['giohang'][$i][4].' </span></span><span class="last">'.$_SESSION['giohang'][$i][3].'</span></a>
+                                 </li>';
+                            }
+
+                            ?>
+                           
                         </ul>
+                        <?php 
+                        if (session_status() === PHP_SESSION_NONE) {
+                            session_start();
+                        }
+                        
+                        $tongtien = 0; // Initialize $tongtien to avoid undefined variable warning
+                        
+                        if (isset($_SESSION['giohang']) && is_array($_SESSION['giohang'])) {
+                            $tongtien = 0; // Reset $tongtien for each calculation
+                            for ($i = 0; $i < count($_SESSION['giohang']); $i++) {
+                                $tongtien = $tongtien + $_SESSION['giohang'][$i][3];
+                            }
+                            $sohang = count($_SESSION['giohang']);
+                        } else {
+                            $sohang = 0;
+                        }
+                        echo'
                         <div class="grand-total">
-                            <p>
-                                <span><strong>Tổng:</strong></span>
-                                <span class="tong-gio-hang">Tổng tiền VNĐ</span>
-                            </p>
-                        </div>
+                        <p>
+                            <span><strong>Tổng:'.$tongtien.'</strong></span>
+                            
+                        </p>
+                    </div>
+                        ';
+                        ?>
+                       
                     </div>
                 </div>
             </div>
