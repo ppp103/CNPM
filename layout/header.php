@@ -68,22 +68,11 @@
                                     <span>Tiền tệ</span>
                                 </a>
                                 <ul class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-currenty">
+                                   
                                     <li>
                                         <a href="javascript:void(0);">
-                                            <i>£</i>
-                                            <span>Pound</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <i>$</i>
-                                            <span>Dollar</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <i>€</i>
-                                            <span>Euro</span>
+                                            <i>VNG</i>
+                                            <span>VNG</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -102,71 +91,83 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <strong class="tg-logo"><a href="index.html"><img src="public/images/logo.png" alt="company name here" /></a></strong>
+                            <strong class="tg-logo"><a href="?mod=home"><img src="public/images/logo.png" alt="company name here" /></a></strong>
                             <div class="tg-wishlistandcart">
-                                <div class="dropdown tg-themedropdown tg-wishlistdropdown">
-                                    <a href="javascript:void(0);" id="tg-wishlisst" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="tg-themebadge">3</span>
-                                        <i class="icon-heart"></i>
-                                        <span>Ưa thích</span>
-                                    </a>
-                                    <div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-wishlisst">
-                                        <div class="tg-description">
-                                            <p>Chưa có sản phẩm nào!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dropdown tg-themedropdown tg-minicartdropdown">
-                                    <a href="javascript:void(0);" id="tg-minicart" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="tg-themebadge">3</span>
-                                        <i class="icon-cart"></i>
-                                        <span>$123.00</span>
-                                    </a>
+                               <?php
+                               if (session_status() === PHP_SESSION_NONE) {
+                                session_start();
+                            }
+                            
+                            $tongtien = 0; // Initialize $tongtien to avoid undefined variable warning
+                            
+                            if (isset($_SESSION['giohang']) && is_array($_SESSION['giohang'])) {
+                                $tongtien = 0; // Reset $tongtien for each calculation
+                                for ($i = 0; $i < count($_SESSION['giohang']); $i++) {
+                                    $tongtien = $tongtien + $_SESSION['giohang'][$i][3];
+                                }
+                                $sohang = count($_SESSION['giohang']);
+                            } else {
+                                $sohang = 0;
+                            }
+                               echo ' <div class="dropdown tg-themedropdown tg-minicartdropdown">
+                               <a href="javascript:void(0);" id="tg-minicart" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                   <span class="tg-themebadge">'.$sohang.'</span>
+                                   <i class="icon-cart"></i>
+                                   <span>'.$tongtien.'</span>
+                               </a>';
+                               
+                               ?>
+                               
                                     <div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-minicart">
                                         <div class="tg-minicartbody">
-                                            <div class="tg-minicarproduct">
-                                                <figure>
-                                                    <img src="public/images/products/img-01.jpg" alt="image description" />
-                                                </figure>
-                                                <div class="tg-minicarproductdata">
-                                                    <h5>
-                                                        <a href="javascript:void(0);">Our State Fair Is A Great Function</a>
-                                                    </h5>
-                                                    <h6><a href="javascript:void(0);">$ 12.15</a></h6>
-                                                </div>
-                                            </div>
-                                            <div class="tg-minicarproduct">
-                                                <figure>
-                                                    <img src="public/images/products/img-02.jpg" alt="image description" />
-                                                </figure>
-                                                <div class="tg-minicarproductdata">
-                                                    <h5>
-                                                        <a href="javascript:void(0);">Bring Me To Light</a>
-                                                    </h5>
-                                                    <h6><a href="javascript:void(0);">$ 12.15</a></h6>
-                                                </div>
-                                            </div>
-                                            <div class="tg-minicarproduct">
-                                                <figure>
-                                                    <img src="public/images/products/img-03.jpg" alt="image description" />
-                                                </figure>
-                                                <div class="tg-minicarproductdata">
-                                                    <h5>
-                                                        <a href="javascript:void(0);">Have Faith In Your Soul</a>
-                                                    </h5>
-                                                    <h6><a href="javascript:void(0);">$ 12.15</a></h6>
-                                                </div>
-                                            </div>
+                                          <?php 
+                                            if (session_status() === PHP_SESSION_NONE) {
+                                                    session_start();
+                                                }
+                                                if(isset($_SESSION['giohang'])&&(is_array($_SESSION['giohang']))){
+                                                    for($i=0; $i<sizeof($_SESSION['giohang']); $i++ ){
+                                                        echo '
+                                                        <div class="tg-minicarproduct">
+                                                        <figure>
+                                                            <img src="public/images/books/'.$_SESSION['giohang'][$i][1].'" alt="image description" />
+                                                        </figure>
+                                                        <div class="tg-minicarproductdata">
+                                                            <h5>
+                                                                <a href="javascript:void(0);">'.$_SESSION['giohang'][$i][2].'</a>
+                                                            </h5>
+                                                            <h6><a href="javascript:void(0);">'.$_SESSION['giohang'][$i][3].'</a></h6>
+                                                        </div>
+                                                         </div>
+                                                    '
+                                                    ;
+                                                    }
+
+                                                }
+                                          
+                                          ?>
+                                           
+
                                         </div>
                                         <div class="tg-minicartfoot">
-                                            <a class="tg-btnemptycart" href="javascript:void(0);">
-                                                <i class="fa fa-trash-o"></i>
-                                                <span>Xóa tất cả</span>
-                                            </a>
-                                            <span class="tg-subtotal">Subtotal: <strong>35.78</strong></span>
+                                           
+                                            <?php 
+                                                 $tongtien = 0; // Initialize $tongtien to avoid undefined variable warning
+                            
+                                                 if (isset($_SESSION['giohang']) && is_array($_SESSION['giohang'])) {
+                                                     $tongtien = 0; // Reset $tongtien for each calculation
+                                                     for ($i = 0; $i < count($_SESSION['giohang']); $i++) {
+                                                         $tongtien = $tongtien + $_SESSION['giohang'][$i][3];
+                                                     }
+                                                     $sohang = count($_SESSION['giohang']);
+                                                 } else {
+                                                     $sohang = 0;
+                                                 }
+                                                echo '<span class="tg-subtotal">Subtotal: <strong>'.$tongtien.'</strong></span>';
+                                            ?>
+                                            
                                             <div class="tg-btns">
-                                                <a class="tg-btn tg-active" href="javascript:void(0);">Xem giỏ hàng</a>
-                                                <a class="tg-btn" href="javascript:void(0);">Thanh toán</a>
+                                                <a class="tg-btn tg-active" href="?mod=cart">Xem giỏ hàng</a>
+                                                <a class="tg-btn" href="?mod=checkout">Thanh toán</a>
                                             </div>
                                         </div>
                                     </div>
@@ -202,29 +203,24 @@
                                 <div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
                                     <ul style="display: flex; justify-content:center;">
                                         <li class="menu-item current-menu-item">
-                                            <a href="#">
+                                            <a href="?mod=home">
                                                 Trang chủ
                                             </a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="#">
+                                            <a href="?mod=tacgia">
                                                 Tác giả
                                             </a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="#">
+                                            <a href="?mod=product">
                                                 Sách
 
                                             </a>
                                         </li>
+                                    
                                         <li class="menu-item">
-                                            <a href="#">
-
-                                                Tin tức
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#">
+                                            <a href="?mod=lienhe">
                                                 Liên hệ
 
                                             </a>

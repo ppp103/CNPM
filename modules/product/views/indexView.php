@@ -23,8 +23,14 @@ get_header();
                                     <div id="displayBooks">
                                         <?php
                                         foreach ($books as $book) {
-                                        ?>
-                                            <input id="MaSach" data-id="<?php echo $book['id'] ?>" type="hidden" />
+                                        ?>                                           
+                                                    <form action="?mod=cart" method="post">
+                                                            <input id="MaSach" name="id" data-id="<?php echo $book['id'] ?>" type="hidden" value="<?php echo $book['id'] ?>"/>
+                                                            <input type="hidden" name="anh" value="<?php echo $book['anh'] ?>"/>
+                                                            <input type="hidden" name="tenSach" value="<?php echo $book['tenSach'] ?>"/>
+                                                            <input type="hidden" name="giaBan" value="<?php echo $book['giaBan']?>" />
+                                                            <input type="hidden" name="soluong" value="1">
+
                                             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
                                                 <div class="tg-postbook">
                                                     <figure class="tg-featureimg">
@@ -50,11 +56,11 @@ get_header();
                                                         <span class="tg-bookprice">
                                                             <ins><?php echo number_format($book['giaBan'], 0, '.', ',') ?> VNĐ</ins>
                                                         </span>
-                                                        <a class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="@sp.MaSach" href="javascript:void(0);">
-                                                            <i class="fa fa-shopping-basket"></i>
-                                                            <em>Thêm vào giỏ</em>
-                                                        </a>
+                                                        
+                                                        <input class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="@sp.MaSach" name="addcart"  type="submit" value="Đặt Hàng"/>
+                              
                                                     </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         <?php

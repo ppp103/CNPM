@@ -41,38 +41,10 @@ get_header();
                         <span>Xóa</span>
                     </div>
                 </div>
-
-                <div id="cart-products">
-                    <div class="product-cart d-flex">
-                        <div class="one-forth">
-                            <div class="product-img" style="background-image: url('public/images/books/img-01.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
-                            </div>
-                            <div class="display-tc">
-                                <h3>Tên sách</h3>
-                            </div>
-                        </div>
-                        <div class="one-eight text-center">
-                            <div class="display-tc">
-                                <span class="price">123 VNĐ</span>
-                            </div>
-                        </div>
-                        <div class="one-eight text-center">
-                            <div class="display-tc">
-                                <input type="number" name="quantity" data-price="123" class="form-control input-number text-center quantity" value="1" min="1" max="100">
-                            </div>
-                        </div>
-                        <div class="one-eight text-center">
-                            <div class="display-tc">
-                                <span class="product-total tong-tien">123 VNĐ</span>
-                            </div>
-                        </div>
-                        <div class="one-eight text-center">
-                            <div class="display-tc">
-                                <a data-maSach="S01" class="closed remove-cart"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              
+                <?php 
+                    showgiohang();
+                ?>
             </div>
             <div class="row row-pb-lg">
                 <div class="col-md-12">
@@ -82,15 +54,16 @@ get_header();
                                 <div class="total">
                                     <div class="grand-total">
                                         <p>
-                                            <span><strong>Tổng: 123 VNĐ</strong></span>
-                                            <span id="cart-total">123 VNĐ</span>
+                                            <span><strong>Tổng:  VNĐ</strong></span>
+                                            <span id="cart-total"> VNĐ</span>
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-8">
-                                <a href="checkout.html" class="button" style="margin-right: 70px">Thanh toán</a>
+                            <div class="col-sm-8">   
+                               <input type="submit" class="button" name="updateSl" style="margin-right: 70px" value="Thamh Toán">
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -98,6 +71,7 @@ get_header();
         </div>
     </div>
 </div>
+
 <?php
 get_footer();
 ?>
