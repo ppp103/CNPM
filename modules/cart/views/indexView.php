@@ -52,16 +52,35 @@ get_header();
                         <div class="row">
                             <div class="col-sm-4 text-center">
                                 <div class="total">
-                                    <div class="grand-total">
-                                        <p>
-                                            <span><strong>Tổng:  VNĐ</strong></span>
-                                            <span id="cart-total"> VNĐ</span>
-                                        </p>
+                                   <?php 
+                                   if (session_status() === PHP_SESSION_NONE) {
+                            session_start();
+                        }
+                        
+                        $tongtien = 0; // Initialize $tongtien to avoid undefined variable warning
+                        
+                         if (isset($_SESSION['giohang']) && is_array($_SESSION['giohang'])) {
+                             $tongtien = 0; // Reset $tongtien for each calculation
+                            for ($i = 0; $i < count($_SESSION['giohang']); $i++) {
+                                $tongtien = $tongtien + $_SESSION['giohang'][$i][3]*$_SESSION['giohang'][$i][4];
+                            }
+                            $sohang = count($_SESSION['giohang']);
+                            } else {
+                            $sohang = 0;
+                             }
+                                   echo ' 
+                                   <div class="grand-total">
+                                   <p>
+                                       <span><strong>Tổng: '.$tongtien.' VNĐ</strong></span>
+                                       <span id="cart-total"> VNĐ</span>
+                                    </p>
                                     </div>
+                               ';
+                                   ?>
                                 </div>
                             </div>
-                            <div class="col-sm-8">   
-                               <input type="submit" class="button" name="updateSl" style="margin-right: 70px" value="Thamh Toán">
+                            <div class="col-sm-8">
+                                <a href="?mod=checkout" class="button" style="margin-right: 70px">Thanh toán</a>
                             </div>
                             </form>
                         </div>

@@ -67,7 +67,7 @@ get_header();
                         if (isset($_SESSION['giohang']) && is_array($_SESSION['giohang'])) {
                             $tongtien = 0; // Reset $tongtien for each calculation
                             for ($i = 0; $i < count($_SESSION['giohang']); $i++) {
-                                $tongtien = $tongtien + $_SESSION['giohang'][$i][3];
+                                $tongtien = $tongtien + $_SESSION['giohang'][$i][3]*$_SESSION['giohang'][$i][4];
                             }
                             $sohang = count($_SESSION['giohang']);
                         } else {
