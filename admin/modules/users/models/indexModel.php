@@ -22,7 +22,12 @@ function check_login($username, $password)
         WHERE tenDangNhap = '$username'");
     try {
         $hashedPaswordFromDB = $sql['matKhau'];
-        if(password_verify($password, $hashedPaswordFromDB)) {
+        // if(password_verify($password, $hashedPaswordFromDB)) {
+        //     if($sql > 0) {
+        //         return true;    
+        //     }
+        // }
+        if(md5($password) == $hashedPaswordFromDB) {
             if($sql > 0) {
                 return true;    
             }
@@ -79,4 +84,15 @@ function update_password($username, $new_password)
     global $conn;
     $sql = db_query("UPDATE `taikhoan` SET `matKhau` = MD5('$new_password') WHERE `taikhoan`.`tenDangNhap` = '$username'");
     return $sql;
+}
+
+// lay mk
+function list_email(){
+    $result = db_fetch_array("SELECT email FROM taikhoan");
+    return $result;
+}
+
+function list_accout(){
+    $result = db_fetch_array("SELECT tenDangNhap FROM taikhoan");
+    return $result;
 }

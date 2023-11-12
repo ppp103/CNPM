@@ -1,7 +1,8 @@
 <?php
     $id=$_GET['id'];
-    $data = show_ChiTietDonHang_by_id($id);
+    $data = show_DonHang_by_id($id);
     $list_dataAll_TaiKhoan = showALL_TaiKhoan();
+    $taikhoan = show_taikhoan_by_id($data['taiKhoan_id']);
 ?>
 <?php
     get_header();
@@ -47,13 +48,13 @@
                 <div style="margin-bottom: 15px;">
                     <label for="category" style="display: block; margin-bottom: 5px; font-weight: bold;">Tài Khoản:</label>
                     <select name="taiKhoan" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;">
-                        <option value="">-- Chọn Tên Tài Khoản --</option>
-                             <?php
-                                foreach($list_dataAll_TaiKhoan as $data){
-                                ?>
-                                <option value="<?php echo $data['id']; ?>"><?php echo $data['hoTen'];?></option>
-                                <?php
-                                }?>
+                        <option value="<?php echo $taikhoan['id']; ?>"><?php echo $taikhoan['tenDangNhap'];?></option>
+                        <?php
+                            foreach($list_dataAll_TaiKhoan as $data){
+                        ?>
+                            <option value="<?php echo $data['id']; ?>"><?php echo $data['tenDangNhap'];?></option>
+                        <?php
+                        }?>
                     </select>
                 </div>
                 <button name="btn_suaCTDH" type="submit" style="background-color: #4caf50; color: white; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer; font-size: 16px;">Gửi</button>

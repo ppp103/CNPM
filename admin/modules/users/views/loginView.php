@@ -45,7 +45,7 @@
                                         <div class="form-group">
                                             <label class="font-weight-semibold" for="password">Mật khẩu:</label>
                                             <p class="error" style="color: red"> <?php echo form_error('matkhau'); ?></p>
-                                            <a class="float-right font-size-13 text-muted" href="#">Quên mật khẩu?</a>
+                                            <a class="float-right font-size-13 text-muted" href="?mod=users&action=laymk">Quên mật khẩu?</a>
                                             <div class="input-affix m-b-10">
                                                 <i class="prefix-icon anticon anticon-lock"></i>
                                                 <input type="password" class="form-control" id="password" placeholder="Mật khẩu" name="matkhau">

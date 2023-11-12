@@ -53,4 +53,8 @@ function showALL_TaiKhoan(){
 }
 
 
-
+function show_TaiKhoan_by_id($id){
+    $sql = "SELECT * FROM taikhoan WHERE id = $id" ;
+    $list_data_TaiKhoan = db_fetch_row($sql);
+    return $list_data_TaiKhoan;
+}

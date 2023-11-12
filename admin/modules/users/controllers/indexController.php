@@ -73,7 +73,8 @@ function dangkyAction() {
         $tenDN = $_POST['tenDangNhap'];
         $pass = $_POST['matKhau'];
         $email = $_POST['email'];
-        $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
+        // $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
+        $hashedPassword = md5($pass);
         $data_taikhoan = [
             'tenDangNhap' => $tenDN,
             'matKhau' => $hashedPassword,
@@ -90,4 +91,11 @@ function dangkyAction() {
 function logoutAction()
 {
     load_view('logout');
+}
+
+
+// lay mk
+function laymkAction(){
+
+    load_view('laymk');
 }
