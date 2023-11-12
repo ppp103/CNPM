@@ -16,10 +16,11 @@ function get_first_products()
     // Lấy giá trị của phần tử đầu tiên
     $firstBook = reset($books);
 
+    $secondBook = next($books);
     // Thêm URL cho phần tử đầu tiên
     $firstBook['url'] = "?mod=product&action=detail&id={$firstBook['id']}";
 
-    return $firstBook;
+    return $secondBook;
 }
 function get_three_products()
 {

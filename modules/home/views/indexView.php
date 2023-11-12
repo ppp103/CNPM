@@ -14,13 +14,13 @@ get_header();
                             <a href="javascript:void(0);"><img src="public/images/author/imag-01.jpg" alt="image description" /></a>
                         </figure>
                         <h1>Jude Morphew</h1>
-                        <h2>Latest 2017 Release</h2>
+                        <h2>Bản phát hành mới nhất 2017</h2>
                         <div class="tg-description">
                             <p>
-                                Consectetur adipisicing elit sed do eiusmod tempor
-                                incididunt ut labore tolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamcoiars nisi ut
-                                aliquip commodo.
+                            Consectetur adipisicing elit sed do eiusmod tạm thời
+                                 sự cố xảy ra trong một câu chuyện lớn. Ut enim quảng cáo tối thiểu
+                                 veniam, quis nostrud kích thích ullamcoiars nisi ut
+                                 hàng hóa aliquip.
                             </p>
                         </div>
                         <div class="tg-btns">
@@ -41,13 +41,13 @@ get_header();
                             <a href="javascript:void(0);"><img src="public/images/author/imag-01.jpg" alt="image description" /></a>
                         </figure>
                         <h1>Jude Morphew</h1>
-                        <h2>Latest 2017 Release</h2>
+                        <h2>Bản phát hành mới nhất 2017</h2>
                         <div class="tg-description">
                             <p>
-                                Consectetur adipisicing elit sed do eiusmod tempor
-                                incididunt ut labore tolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamcoiars nisi ut
-                                aliquip commodo.
+                            Consectetur adipisicing elit sed do eiusmod tạm thời
+                                 sự cố xảy ra trong một câu chuyện lớn. Ut enim quảng cáo tối thiểu
+                                 veniam, quis nostrud kích thích ullamcoiars nisi ut
+                                 hàng hóa aliquip.
                             </p>
                         </div>
                         <div class="tg-btns">
@@ -79,7 +79,7 @@ get_header();
                             <div class="tg-status">
                                 <div class="tg-statuscontent">
                                     <span class="tg-statusicon"><i class="icon-book"></i></span>
-                                    <h2>Books we have<span>24,179,213</span></h2>
+                                    <h2>Sách Chúng Tôi Có<span>24,179,213</span></h2>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ get_header();
                             <div class="tg-status">
                                 <div class="tg-statuscontent">
                                     <span class="tg-statusicon"><i class="icon-user"></i></span>
-                                    <h2>Total members<span>15,179,213</span></h2>
+                                    <h2>Tổng Số Thành Viên:<span>15,179,213</span></h2>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@ get_header();
                             <div class="tg-status">
                                 <div class="tg-statuscontent">
                                     <span class="tg-statusicon"><i class="icon-heart"></i></span>
-                                    <h2>Happy users<span>1,267,539</span></h2>
+                                    <h2>Người dùng hạnh phúc:<span>1,267,539</span></h2>
                                 </div>
                             </div>
                         </div>
@@ -119,8 +119,8 @@ get_header();
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="tg-sectionhead">
-                        <h2><span>People’s Choice</span>Bestselling Books</h2>
-                        <a class="tg-btn" href="javascript:void(0);">View All</a>
+                        <h2><span>Sự lựa chọn của mọi người</span>Sách bán chạy nhất</h2>
+                        <a  class="tg-btn" href="javascript:void(0);">Xem tất cả</a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -153,20 +153,20 @@ get_header();
                                 </figure>
                                 <div class="tg-postbookcontent">
                                     <ul class="tg-bookscategories">
-                                        <li><a href="javascript:void(0);">Adventure</a></li>
-                                        <li><a href="javascript:void(0);">Fun</a></li>
+                                        <li><a href="javascript:void(0);"><?php echo $book['tenTheLoai'] ?></a></li>
+                                        <li><a href="javascript:void(0);"><?php echo $book['tenTheLoai'] ?></a></li>
                                     </ul>
                                     <div class="tg-booktitle">
                                         <h3>
                                             <a href="javascript:void(0);"><?php echo $book['tenSach'] ?></a>
                                         </h3>
                                     </div>
-                                    <span class="tg-bookwriter">By:
+                                    <span class="tg-bookwriter">Bởi:
                                         <a href="javascript:void(0);"><?php echo $book['tenTacGia'] ?></a></span>
                                     <span class="tg-stars"><span></span></span>
                                     <span class="tg-bookprice">
-                                        <ins><?php echo $book['giaBan'] ?></ins>
-                                        <del><?php echo $book['giaBan'] ?></del>
+                                        <ins><?php echo number_format($book['giaBan'], 0, '.', ',') ?></ins>
+                                        <del><?php echo number_format($book['giaBan'], 0, '.', ',') ?></del>
                                     </span>
                                     <input class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="@sp.MaSach" name="addcart"  type="submit" value="Đặt Hàng"/>
                                 </div>
@@ -201,26 +201,26 @@ get_header();
                 <div class="tg-featureditm">
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
                         <figure>
-                            <img style="width:400px; height:500px;" src="public/images/books/<?php echo $firstbook['anh'] ?>" alt="image description" />
+                            <img style="width:350px; height:400px;" src="public/images/books/<?php echo $firstbook['anh'] ?>" alt="image description" />
                         </figure>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                         <div class="tg-featureditmcontent">
                             <div class="tg-themetagbox">
-                                <span class="tg-themetag">featured</span>
+                                <span class="tg-themetag">Đặc sắc</span>
                             </div>
                             <div class="tg-booktitle">
                                 <h3>
                                     <a href="javascript:void(0);"><?php echo $firstbook['tenSach'] ?></a>
                                 </h3>
                             </div>
-                            <span class="tg-bookwriter">By:
+                            <span class="tg-bookwriter"> Bởi :
                                 <a href="javascript:void(0);"><?php echo $firstbook['tenTacGia'] ?></a></span>
                             <span class="tg-stars"><span></span></span>
                             <div class="tg-priceandbtn">
                                 <span class="tg-bookprice">
-                                    <ins><?php echo $firstbook['giaBan'] ?></ins>
-                                    <del><?php echo $firstbook['giaBan'] ?></del>
+                                    <ins><?php echo number_format($firstbook['giaBan'], 0, '.', ',') ?></ins>
+                                    <del><?php echo number_format($firstbook['giaBan'], 0, '.', ',') ?></del>
                                 </span>
                                 <input class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="@sp.MaSach" name="addcart"  type="submit" value="Đặt Hàng"/>
                             </div>
@@ -246,16 +246,16 @@ get_header();
                 <div class="tg-newrelease">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                         <div class="tg-sectionhead">
-                            <h2><span>Taste The New Spice</span>New Release Books</h2>
+                            <h2><span>Nếm thử gia vị mới</span>Sách phát hành mới</h2>
                         </div>
                         <div class="tg-description">
                             <p>
-                                Consectetur adipisicing elit sed do eiusmod tempor
-                                incididunt labore toloregna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamcoiars nisiuip
-                                commodo consequat aute irure dolor in aprehenderit aveli
-                                esseati cillum dolor fugiat nulla pariatur cepteur sint
-                                occaecat cupidatat.
+                                Consectetur adipisicing elit sed do eiusmod tạm thời
+                                 sự cố xảy ra với toloregna aliqua. Ut enim quảng cáo tối thiểu
+                                 veniam, quis nostrud kích thích ullamcoiars nisiuip
+                                 commodo consequat aute irure dolor in aprehenderit aveli
+                                 esseati cillum dolor fugiat nulla pariatur cepteur sint
+                                 thỉnh thoảng cupidatat.
                             </p>
                         </div>
                         <div class="tg-btns">
@@ -297,7 +297,7 @@ get_header();
                                                     <a href="javascript:void(0);"><?php echo $selectedBooks['tenSach'] ?></a>
                                                 </h3>
                                             </div>
-                                            <span class="tg-bookwriter">By:
+                                            <span class="tg-bookwriter">Bởi:
                                                 <a href="javascript:void(0);"><?php echo $selectedBooks['tenTacGia'] ?></a></span>
                                             <span class="tg-stars"><span></span></span>
                                         </div>
@@ -327,7 +327,7 @@ get_header();
                                 <i class="icon-bubble"></i>
                             </div>
                             <div class="tg-titlepluscounter">
-                                <h2>Drama</h2>
+                                <h2>Kịch</h2>
                                 <h3 data-from="0" data-to="6179213" data-speed="8000" data-refresh-interval="50">
                                     6,179,213
                                 </h3>
@@ -338,7 +338,7 @@ get_header();
                                 <i class="icon-heart-pulse"></i>
                             </div>
                             <div class="tg-titlepluscounter">
-                                <h2>Horror</h2>
+                                <h2>Kinh dị</h2>
                                 <h3 data-from="0" data-to="3121242" data-speed="8000" data-refresh-interval="50">
                                     3,121,242
                                 </h3>
@@ -349,7 +349,7 @@ get_header();
                                 <i class="icon-heart"></i>
                             </div>
                             <div class="tg-titlepluscounter">
-                                <h2>Romance</h2>
+                                <h2>Lãng mạn</h2>
                                 <h3 data-from="0" data-to="2101012" data-speed="8000" data-refresh-interval="50">
                                     2,101,012
                                 </h3>
@@ -360,7 +360,7 @@ get_header();
                                 <i class="icon-star"></i>
                             </div>
                             <div class="tg-titlepluscounter">
-                                <h2>Fashion</h2>
+                                <h2>Thời trang</h2>
                                 <h3 data-from="0" data-to="1158245" data-speed="8000" data-refresh-interval="50">
                                     1,158,245
                                 </h3>
@@ -382,8 +382,8 @@ get_header();
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="tg-sectionhead">
-                        <h2><span>Some Great Books</span>Picked By Authors</h2>
-                        <a class="tg-btn" href="javascript:void(0);">View All</a>
+                        <h2><span>Một Số Cuốn Sách Hay</span>Được chọn bởi tác giả</h2>
+                        <a class="tg-btn" href="javascript:void(0);">Xem Tất Cả</a>
                     </div>
                 </div>
                 <div id="tg-pickedbyauthorslider" class="tg-pickedbyauthor tg-pickedbyauthorslider owl-carousel">
@@ -407,7 +407,7 @@ get_header();
                                     </div>
                                     <strong class="tg-bookpage">Book Pages: 206</strong>
                                     <strong class="tg-bookcategory"><?php echo $book['tenTheLoai'] ?></strong>
-                                    <strong class="tg-bookprice">Price:<?php echo $book['tenTheLoai'] ?> </strong>
+                                    <strong class="tg-bookprice">Giá Bán:<?php echo number_format($book['giaBan'], 0, '.', ',') ?>VNG </strong>
                                     <div class="tg-ratingbox">
                                         <span class="tg-stars"><span></span></span>
                                     </div>
@@ -447,10 +447,10 @@ get_header();
                                     <img src="public/images/author/imag-02.jpg" alt="image description" />
                                 </figure>
                                 <blockquote>
-                                    <q>Consectetur adipisicing elit sed do eiusmod tempor
-                                        incididunt ut labore tolore magna aliqua enim ad minim
-                                        veniam, quis nostrud exercitation ullamcoiars nisi ut
-                                        aliquip commodo.</q>
+                                    <q>Consectetur adipisicing elit sed do eiusmod tạm thời
+                                         sự cố ut lao động tolore magna aliqua enim ad minim
+                                         veniam, quis nostrud kích thích ullamcoiars nisi ut
+                                         aliquip hàng hóa.</q>
                                 </blockquote>
                                 <div class="tg-testimonialauthor">
                                     <h3>Holli Fenstermacher</h3>
@@ -477,10 +477,10 @@ get_header();
                                     <img src="public/images/author/imag-02.jpg" alt="image description" />
                                 </figure>
                                 <blockquote>
-                                    <q>Consectetur adipisicing elit sed do eiusmod tempor
-                                        incididunt ut labore tolore magna aliqua enim ad minim
-                                        veniam, quis nostrud exercitation ullamcoiars nisi ut
-                                        aliquip commodo.</q>
+                                    <q>Consectetur adipisicing elit sed do eiusmod tạm thời
+                                         sự cố ut lao động tolore magna aliqua enim ad minim
+                                         veniam, quis nostrud kích thích ullamcoiars nisi ut
+                                         hàng hóa aliquip.</q>
                                 </blockquote>
                                 <div class="tg-testimonialauthor">
                                     <h3>Holli Fenstermacher</h3>
@@ -505,7 +505,7 @@ get_header();
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="tg-sectionhead">
                         <h2>
-                            <span>Strong Minds Behind Us</span>Most Popular Authors
+                            <span>Tâm trí mạnh mẽ đằng sau chúng ta</span>Tác giả được yêu thích nhất
                         </h2>
                         <a class="tg-btn" href="javascript:void(0);">View All</a>
                     </div>
@@ -709,197 +709,7 @@ get_header();
     <!--************************************
 					Latest News Start
 			*************************************-->
-    <section class="tg-sectionspace tg-haslayout">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="tg-sectionhead">
-                        <h2>
-                            <span>Latest News &amp; Articles</span>What's Hot in The
-                            News
-                        </h2>
-                        <a class="tg-btn" href="javascript:void(0);">View All</a>
-                    </div>
-                </div>
-                <div id="tg-postslider" class="tg-postslider tg-blogpost owl-carousel">
-                    <article class="item tg-post">
-                        <figure>
-                            <a href="javascript:void(0);"><img src="public/images/blog/img-01.jpg" alt="image description" /></a>
-                        </figure>
-                        <div class="tg-postcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Adventure</a></li>
-                                <li><a href="javascript:void(0);">Fun</a></li>
-                            </ul>
-                            <div class="tg-themetagbox">
-                                <span class="tg-themetag">featured</span>
-                            </div>
-                            <div class="tg-posttitle">
-                                <h3>
-                                    <a href="javascript:void(0);">Where The Wild Things Are</a>
-                                </h3>
-                            </div>
-                            <span class="tg-bookwriter">By:
-                                <a href="javascript:void(0);">Kathrine Culbertson</a></span>
-                            <ul class="tg-postmetadata">
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 Comments</i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-eye"></i><i>24,565 Views</i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="item tg-post">
-                        <figure>
-                            <a href="javascript:void(0);"><img src="public/images/blog/img-02.jpg" alt="image description" /></a>
-                        </figure>
-                        <div class="tg-postcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Adventure</a></li>
-                                <li><a href="javascript:void(0);">Fun</a></li>
-                            </ul>
-                            <div class="tg-themetagbox">
-                                <span class="tg-themetag">featured</span>
-                            </div>
-                            <div class="tg-posttitle">
-                                <h3>
-                                    <a href="javascript:void(0);">All She Wants To Do Is Dance</a>
-                                </h3>
-                            </div>
-                            <span class="tg-bookwriter">By:
-                                <a href="javascript:void(0);">Kathrine Culbertson</a></span>
-                            <ul class="tg-postmetadata">
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 Comments</i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-eye"></i><i>24,565 Views</i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="item tg-post">
-                        <figure>
-                            <a href="javascript:void(0);"><img src="public/images/blog/img-03.jpg" alt="image description" /></a>
-                        </figure>
-                        <div class="tg-postcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Adventure</a></li>
-                                <li><a href="javascript:void(0);">Fun</a></li>
-                            </ul>
-                            <div class="tg-themetagbox">
-                                <span class="tg-themetag">featured</span>
-                            </div>
-                            <div class="tg-posttitle">
-                                <h3>
-                                    <a href="javascript:void(0);">Why Walk When You Can Climb?</a>
-                                </h3>
-                            </div>
-                            <span class="tg-bookwriter">By:
-                                <a href="javascript:void(0);">Kathrine Culbertson</a></span>
-                            <ul class="tg-postmetadata">
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 Comments</i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-eye"></i><i>24,565 Views</i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="item tg-post">
-                        <figure>
-                            <a href="javascript:void(0);"><img src="public/images/blog/img-04.jpg" alt="image description" /></a>
-                        </figure>
-                        <div class="tg-postcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Adventure</a></li>
-                                <li><a href="javascript:void(0);">Fun</a></li>
-                            </ul>
-                            <div class="tg-themetagbox">
-                                <span class="tg-themetag">featured</span>
-                            </div>
-                            <div class="tg-posttitle">
-                                <h3>
-                                    <a href="javascript:void(0);">Dance Like Nobody’s Watching</a>
-                                </h3>
-                            </div>
-                            <span class="tg-bookwriter">By:
-                                <a href="javascript:void(0);">Kathrine Culbertson</a></span>
-                            <ul class="tg-postmetadata">
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 Comments</i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-eye"></i><i>24,565 Views</i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="item tg-post">
-                        <figure>
-                            <a href="javascript:void(0);"><img src="public/images/blog/img-02.jpg" alt="image description" /></a>
-                        </figure>
-                        <div class="tg-postcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Adventure</a></li>
-                                <li><a href="javascript:void(0);">Fun</a></li>
-                            </ul>
-                            <div class="tg-themetagbox">
-                                <span class="tg-themetag">featured</span>
-                            </div>
-                            <div class="tg-posttitle">
-                                <h3>
-                                    <a href="javascript:void(0);">All She Wants To Do Is Dance</a>
-                                </h3>
-                            </div>
-                            <span class="tg-bookwriter">By:
-                                <a href="javascript:void(0);">Kathrine Culbertson</a></span>
-                            <ul class="tg-postmetadata">
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 Comments</i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-eye"></i><i>24,565 Views</i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="item tg-post">
-                        <figure>
-                            <a href="javascript:void(0);"><img src="public/images/blog/img-03.jpg" alt="image description" /></a>
-                        </figure>
-                        <div class="tg-postcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Adventure</a></li>
-                                <li><a href="javascript:void(0);">Fun</a></li>
-                            </ul>
-                            <div class="tg-themetagbox">
-                                <span class="tg-themetag">featured</span>
-                            </div>
-                            <div class="tg-posttitle">
-                                <h3>
-                                    <a href="javascript:void(0);">Why Walk When You Can Climb?</a>
-                                </h3>
-                            </div>
-                            <span class="tg-bookwriter">By:
-                                <a href="javascript:void(0);">Kathrine Culbertson</a></span>
-                            <ul class="tg-postmetadata">
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 Comments</i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-eye"></i><i>24,565 Views</i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
+   
     <!--************************************
 					Latest News End
 			*************************************-->
