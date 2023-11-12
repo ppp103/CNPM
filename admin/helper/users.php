@@ -10,8 +10,8 @@ function is_login() {
 
 //Trả về username của người login
 function user_login() {
-    if (!empty($_SESSION['username'])) {
-        return $_SESSION['username'];
+    if (!empty($_SESSION['tenDangNhap'])) {
+        return $_SESSION['tenDangNhap'];
     }
     return false;
 }

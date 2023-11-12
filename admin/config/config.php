@@ -14,7 +14,7 @@ date_default_timezone_set("Asia/Ho_Chi_Minh");
  * 
  */
 
-$config['base_url'] = "http://localhost/CNPM_FINAL/admin/";
+$config['base_url'] = "http://localhost/CNPM/admin/";
 
 
 $config['default_module'] = 'users';

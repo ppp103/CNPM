@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 // Hàm kết nối dữ liệu
 function db_connect()
@@ -98,6 +98,33 @@ function db_delete($table, $where)
     $query_string = "DELETE FROM " . $table . " WHERE $where";
     db_query($query_string);
     return mysqli_affected_rows($conn);
+}
+
+// Hàm phân trang
+function paginate($table, $currentPage, $itemsPerPage)
+{
+    // Tính tổng số mục
+    $totalItems = db_num_rows("SELECT * FROM $table");
+
+    // Tính số trang
+    $totalPages = ceil($totalItems / $itemsPerPage);
+
+    // Đảm bảo trang hiện tại nằm trong phạm vi hợp lệ
+    $currentPage = max(1, min($totalPages, intval($currentPage)));
+
+    // Tính offset (vị trí bắt đầu của mỗi trang)
+    $offset = ($currentPage - 1) * $itemsPerPage;
+
+    // Truy vấn dữ liệu từ cơ sở dữ liệu dựa trên trang hiện tại và số lượng mục trên mỗi trang
+    $query = "SELECT * FROM $table LIMIT $offset, $itemsPerPage";
+    $data = db_fetch_array($query);
+
+    // Trả về dữ liệu phân trang
+    return [
+        'data' => $data,
+        'currentPage' => $currentPage,
+        'totalPages' => $totalPages,
+    ];
 }
 
 function escape_string($str)
