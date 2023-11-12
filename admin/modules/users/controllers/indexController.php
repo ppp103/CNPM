@@ -54,7 +54,7 @@ function loginAction()
                         redirect('?mod=theloai&action=index');
                     } else {
                         $_SESSION['is_admin'] = false;
-                        echo 'Bạn là user';
+                        header("Location: http://localhost/CNPM/?mod=home");
                         // Thực hiện các hành động cho quyền user ở đây
                     }
                 }

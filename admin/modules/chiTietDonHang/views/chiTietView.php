@@ -93,7 +93,7 @@ get_header();
                     <div class="row m-t-30 lh-1-8">
                         <div class="col-sm-12">
                             <div class="float-right text-right">
-                                <h3><span class="font-weight-semibold text-dark">Tổng tiền : <?php echo  $tongTien = $tongTien - ($tongGiamGia/100 *$tongTien); ?>  VNĐ</h3>
+                                <h3><span class="font-weight-semibold text-dark">Tổng tiền : <?php echo number_format($tongTien = $tongTien - ($tongGiamGia/100 *$tongTien))  ?>  VNĐ</h3>
                             </div>
                         </div>
                     </div>
