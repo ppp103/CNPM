@@ -795,10 +795,12 @@ li.tg-rss a {
 }
 .tg-sectionhead {
   width: 100%;
-  float: left;
   margin: 0 0 15px;
   padding: 0 100px 30px 0;
   border-bottom: 1px solid #dbdbdb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .tg-sectionhead h2 {
   margin: 0;
@@ -1226,6 +1228,9 @@ body.tg-comingsoonpage .tg-wrapper {
 }
 .tg-minicartfoot .tg-btns .tg-btn + .tg-btn {
   float: right;
+}
+.tg-themedropdown.open {
+  z-index: 5;
 }
 .tg-themedropdown.open .tg-themedropdownmenu {
   top: 100%;

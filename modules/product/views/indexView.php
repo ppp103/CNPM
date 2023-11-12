@@ -25,6 +25,16 @@ get_header();
                             <div class="tg-products">
                                 <div class="tg-sectionhead">
                                     <h2>Danh sách sản phẩm</h2>
+                                    <nav class="pagination__nav" style="text-align: center;" aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                            <?php
+                                            for ($i = 1; $i <= $total_page; $i++) {
+                                                $isActive = ($i == $page) ? "active" : "";
+                                                echo "<li class='page-item $isActive'><a class='page-link' href='?mod=product&page=$i&search=$search'>$i</a></li>";
+                                            }
+                                            ?>
+                                        </ul>
+                                    </nav>
                                 </div>
                                 <?php
                                 if ($total_books == 0) {
@@ -37,7 +47,7 @@ get_header();
                                             <?php
                                             foreach ($books as $book) {
                                             ?>
-                                                <form action="?mod=cart" method="post">
+                                                <form class="book__form" action="?mod=cart" method="post">
                                                     <input id="MaSach" name="id" data-id="<?php echo $book['id'] ?>" type="hidden" value="<?php echo $book['id'] ?>" />
                                                     <input type="hidden" name="anh" value="<?php echo $book['anh'] ?>" />
                                                     <input type="hidden" name="tenSach" value="<?php echo $book['tenSach'] ?>" />
@@ -73,6 +83,7 @@ get_header();
                                                                 <input class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="<?php echo $book['id'] ?>" name="addcart" type="submit" value="Thêm vào giỏ" />
 
                                                             </div>
+
                                                 </form>
                                         </div>
                                     </div>
@@ -80,16 +91,6 @@ get_header();
                                 <?php
                                             }
                                 ?>
-                                <nav style="text-align: center;" aria-label="Page navigation example">
-                                    <ul class="pagination justify-content-center">
-                                        <?php
-                                        for ($i = 1; $i <= $total_page; $i++) {
-                                            $isActive = ($i == $page) ? "active" : "";
-                                            echo "<li class='page-item $isActive'><a class='page-link' href='?mod=product&page=$i&search=$search'>$i</a></li>";
-                                        }
-                                        ?>
-                                    </ul>
-                                </nav>
                             </div>
                         </div>
                     <?php
