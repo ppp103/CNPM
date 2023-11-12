@@ -1,0 +1,15 @@
+.icon__vertify {
+  background: url("../icon/Sprites.64af8f61.svg") no-repeat -1603px -259px;
+  border-radius: 100%;
+  border: 3px solid #baeed4;
+  width: 23px;
+  height: 23px;
+}
+
+.icon__error {
+  background: url("../icon/Sprites.64af8f61.svg") no-repeat -539px -147px;
+  width: 23px;
+  height: 23px;
+  border-radius: 100%;
+  border: 3px solid rgb(243, 95, 154);
+}

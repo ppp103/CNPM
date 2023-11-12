@@ -293,3 +293,27 @@ function updateMoney() {
 }
 
 $('input[name="quantity"]').change(updateMoney);
+
+if ($(".ty-compact-list").length > 3) {
+  $(".ty-compact-list:gt(2)").hide();
+  $(".show-more").show();
+}
+
+$(".show-more").on("click", function () {
+  //toggle elements with class .ty-compact-list that their index is bigger than 2
+  $(".ty-compact-list:gt(2)").toggle();
+  //change text of show more element just for demonstration purposes to this demo
+  $(this).text() === "Show more"
+    ? $(this).text("Show less")
+    : $(this).text("Show more");
+});
+// $("#search").on("keydown", function (event) {
+//   if (event.which == 18) {
+//     event.preventDefault();
+//     console.log($("#search").val());
+//     // window.location.pathname = `?search=${$("#search").val()}`;
+//     window.location.href = `http://localhost/CNPM_FINAL/CNPM/?mod=product&search=${$(
+//       "#search"
+//     ).val()}`;
+//   }
+// });
