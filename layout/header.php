@@ -98,7 +98,12 @@
                                 <figure>
                                     <a href="javascript:void(0);"><img src="public/images/users/img-01.jpg" alt="image description" /></a>
                                 </figure>
-                                <span>Xin chào, tên tài khoản</span>
+                                <span>Xin chào, 
+                                    <?php if (isset($_SESSION['tenDangNhap']) && $_SESSION['tenDangNhap'] !== null) {
+                                        echo $_SESSION['tenDangNhap'];
+                                    } else {
+                                        echo 'bạn hãy đăng nhập';
+                                    }?></span>
                             </div>
                         </div>
                     </div>

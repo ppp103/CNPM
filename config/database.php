@@ -19,5 +19,5 @@ $db = array(
     'hostname' => 'localhost',
     'username' => 'root',
     'password' => '123456',
-    'database' => 'qlbansach8',
+    'database' => 'qlbansach3',
 );
