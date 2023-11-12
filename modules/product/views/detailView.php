@@ -11,7 +11,7 @@ get_header();
                     <ol class="tg-breadcrumb">
                         <li><a href="javascript:void(0);">Trang chủ</a></li>
                         <li><a href="javascript:void(0);">Sách</a></li>
-                        <li class="tg-active"></li>
+                        <li class="tg-active"><?php echo $book['tenSach'] ?></li>
                     </ol>
                 </div>
             </div>
@@ -33,33 +33,34 @@ get_header();
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                         <form method="post" action="?mod=cart">
-                                        <div class="tg-postbook">
-                                            <figure class="tg-featureimg"><img src="public/images/books/<?php echo $book['anh'] ?>" alt="image description"></figure>
-                                            <div class="tg-postbookcontent">
-                                                <span class="tg-bookprice">
-                                                    <ins> <?php echo $book['giaBan'] ?> VNĐ</ins>
-                                                </span>
-                                                <ul class="tg-delevrystock">
-                                                    <li><i class="icon-rocket"></i><span>Freeship toàn cầu</span></li>
-                                                    <li><i class="icon-checkmark-circle"></i><span>Xuất kho từ Mỹ sau 2 ngày</span></li>
-                                                    <li><i class="icon-store"></i><span>Trạng thái: <em>Còn hàng</em></span></li>
-                                                </ul>
-                                                <div class="tg-quantityholder">
-                                                    <em class="minus">-</em>
-                                                    <input type="text" class="result" value="0" id="quantity1" name="quantity">
-                                                    <em class="plus">+</em>
-                                                </div>
-                                                <input class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="@sp.MaSach" name="addcart"  type="submit" value="Đặt Hàng"/>
-                                                <input id="MaSach" name="id" data-id="<?php echo $book['id'] ?>" type="hidden" value="<?php echo $book['id'] ?>"/>
-                                                <input type="hidden" name="anh" value="<?php echo $book['anh'] ?>"/>
-                                                <input type="hidden" name="tenSach" value="<?php echo $book['tenSach'] ?>"/>
-                                                <input type="hidden" name="giaBan" value="<?php echo $book['giaBan']?>" />
-                                                <input type="hidden" name="soluong" value="1">
+                                            <div class="tg-postbook">
+                                                <figure class="tg-featureimg"><img src="public/images/books/<?php echo $book['anh'] ?>" alt="image description"></figure>
+                                                <div class="tg-postbookcontent">
+                                                    <span class="tg-bookprice">
+                                                        <ins> <?php echo number_format($book['giaBan']) ?> VNĐ</ins>
+                                                    </span>
+                                                    <ul class="tg-delevrystock">
+                                                        <li><i class="icon-rocket"></i><span>Freeship toàn cầu</span></li>
+                                                        <li><i class="icon-checkmark-circle"></i><span>Xuất kho từ Mỹ sau 2 ngày</span></li>
+                                                        <li><i class="icon-store"></i><span>Trạng thái: <em>Còn hàng</em></span></li>
+                                                    </ul>
+                                                    <div class="tg-quantityholder">
+                                                        <em class="minus">-</em>
+                                                        <input type="text" class="result" value="0" id="quantity1" name="quantity">
+                                                        <em class="plus">+</em>
+                                                    </div>
+                                                    <input class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="<?php echo $book['id'] ?>" name="addcart" type="submit" value="Đặt Hàng" />
 
-                                                <input asp-for="MaSach" type="hidden" />
-                                               
+                                                    <input id="MaSach" name="id" data-id="<?php echo $book['id'] ?>" type="hidden" value="<?php echo $book['id'] ?>" />
+                                                    <input type="hidden" name="anh" value="<?php echo $book['anh'] ?>" />
+                                                    <input type="hidden" name="tenSach" value="<?php echo $book['tenSach'] ?>" />
+                                                    <input type="hidden" name="giaBan" value="<?php echo $book['giaBan'] ?>" />
+                                                    <input type="hidden" name="soluong" value="1">
+
+                                                    <input asp-for="MaSach" type="hidden" />
+
+                                                </div>
                                             </div>
-                                        </div>
                                         </form>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
@@ -221,7 +222,6 @@ get_header();
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                             <div id="tg-relatedproductslider" class="tg-relatedproductslider tg-relatedbooks owl-carousel">
-                                                @foreach (var a in ViewBag.masach) {
                                                 <div class="item">
                                                     <div class="tg-postbook">
                                                         <figure class="tg-featureimg">
@@ -255,7 +255,6 @@ get_header();
                                                     </div>
                                                 </div>
 
-                                                }
                                             </div>
                                         </div>
                                     </div>
@@ -264,192 +263,9 @@ get_header();
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 pull-left">
-                        <aside id="tg-sidebar" class="tg-sidebar">
-                            <div class="tg-widget tg-widgetsearch">
-                                <form class="tg-formtheme tg-formsearch">
-                                    <div class="form-group">
-                                        <button type="submit"><i class="icon-magnifier"></i></button>
-                                        <input type="search" name="search" class="form-group" placeholder="Search Bởi title, author, key...">
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="tg-widget tg-catagories">
-                                <div class="tg-widgettitle">
-                                    <h3>Danh Mục Sách</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        @foreach (var dm in ViewBag.madm)
-                                        {
-                                        <li><a asp-controller="Home" asp-action="HienThiTheoDanhMuc" asp-route-madm="@dm.MaDm"><span>@dm.TenDm</span>@*<em>28245</em>*@</a></li>
-                                        }
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tg-widget tg-widgettrending">
-                                <div class="tg-widgettitle">
-                                    <h3>Sách thịnh hành</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        <li>
-                                            <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="public/Images/products/img-04.jpg" alt="image description"></a></figure>
-                                                <div class="tg-postcontent">
-                                                    <div class="tg-posttitle">
-                                                        <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
-                                                    </div>
-                                                    <span class="tg-bookwriter">Bởi: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
-                                                </div>
-                                            </article>
-                                        </li>
-                                        <li>
-                                            <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="public/Images/products/img-05.jpg" alt="image description"></a></figure>
-                                                <div class="tg-postcontent">
-                                                    <div class="tg-posttitle">
-                                                        <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
-                                                    </div>
-                                                    <span class="tg-bookwriter">Bởi: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
-                                                </div>
-                                            </article>
-                                        </li>
-                                        <li>
-                                            <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="public/Images/products/img-06.jpg" alt="image description"></a></figure>
-                                                <div class="tg-postcontent">
-                                                    <div class="tg-posttitle">
-                                                        <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
-                                                    </div>
-                                                    <span class="tg-bookwriter">Bởi: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
-                                                </div>
-                                            </article>
-                                        </li>
-                                        <li>
-                                            <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="public/Images/products/img-07.jpg" alt="image description"></a></figure>
-                                                <div class="tg-postcontent">
-                                                    <div class="tg-posttitle">
-                                                        <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
-                                                    </div>
-                                                    <span class="tg-bookwriter">Bởi: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
-                                                </div>
-                                            </article>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tg-widget tg-widgetinstagram">
-                                <div class="tg-widgettitle">
-                                    <h3>Instagram</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        <li>
-                                            <figure>
-                                                <img src="public/Images/instagram/img-01.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="public/Images/instagram/img-02.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="public/Images/instagram/img-03.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="public/Images/instagram/img-04.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="public/Images/instagram/img-05.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="public/Images/instagram/img-06.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="public/Images/instagram/img-07.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="public/Images/instagram/img-08.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="public/Images/instagram/img-09.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tg-widget tg-widgetblogers">
-                                <div class="tg-widgettitle">
-                                    <h3>Top Bloogers</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        <li>
-                                            <div class="tg-author">
-                                                <figure><a href="javascript:void(0);"><img src="public/Images/author/imag-03.jpg" alt="image description"></a></figure>
-                                                <div class="tg-authorcontent">
-                                                    <h2><a href="javascript:void(0);">Jude Morphew</a></h2>
-                                                    <span>21,658 Sách xuất bản</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="tg-author">
-                                                <figure><a href="javascript:void(0);"><img src="public/Images/author/imag-04.jpg" alt="image description"></a></figure>
-                                                <div class="tg-authorcontent">
-                                                    <h2><a href="javascript:void(0);">Jude Morphew</a></h2>
-                                                    <span>21,658 Sách xuất bản</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="tg-author">
-                                                <figure><a href="javascript:void(0);"><img src="public/Images/author/imag-05.jpg" alt="image description"></a></figure>
-                                                <div class="tg-authorcontent">
-                                                    <h2><a href="javascript:void(0);">Jude Morphew</a></h2>
-                                                    <span>21,658 Sách xuất bản</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="tg-author">
-                                                <figure><a href="javascript:void(0);"><img src="public/Images/author/imag-06.jpg" alt="image description"></a></figure>
-                                                <div class="tg-authorcontent">
-                                                    <h2><a href="javascript:void(0);">Jude Morphew</a></h2>
-                                                    <span>21,658 Sách xuất bản</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
+                    <?php
+                    get_sidebar();
+                    ?>
                 </div>
             </div>
         </div>
@@ -462,5 +278,6 @@ get_header();
 
 <?php
 get_footer();
-show_array($book);
+// show_array($book);
+show_array($categories);
 ?>
