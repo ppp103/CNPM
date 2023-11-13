@@ -1,4 +1,8 @@
 <?php
+
+    $id=$_GET['id'];
+    $data = show_taikhoan_by_id($id);
+
     get_header();
 ?>
 
@@ -12,29 +16,29 @@
             <form action="" method="post">
             <div style="margin-bottom: 15px;">
                     <label for="category" style="display: block; margin-bottom: 5px; font-weight: bold;">Tên Đăng Nhập:</label>
-                    <input type="text" id="tenDangNhap" name="tenDangNhap" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;" required>
+                    <input value="<?php echo $data['tenDangNhap']?>" type="text" id="tenDangNhap" name="tenDangNhap" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;" required>
                 </div>
                 <div style="margin-bottom: 15px;">
                     <label for="category" style="display: block; margin-bottom: 5px; font-weight: bold;">Mật Khẩu:</label>
-                    <input type="text" id="matKhau" name="matKhau" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;" required>
+                    <input value="<?php echo $data['matKhau']?>" type="text" id="matKhau" name="matKhau" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;" required>
                 </div>
                 <div style="margin-bottom: 15px;">
                     <label for="category" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
-                    <input type="text" id="email" name="email" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;" required>
+                    <input value="<?php echo $data['email']?>" type="text" id="email" name="email" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;" required>
                 </div>
                 <div style="margin-bottom: 15px;">
                     <label for="category" style="display: block; margin-bottom: 5px; font-weight: bold;">Điện Thoại:</label>
-                    <input type="text" id="dienThoai" name="dienThoai" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;" required>
+                    <input value="<?php echo $data['dienThoai']?>" type="text" id="dienThoai" name="dienThoai" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;" required>
                 </div>
                 <div style="margin-bottom: 15px;">
                     <label for="category" style="display: block; margin-bottom: 5px; font-weight: bold;">Họ Tên:</label>
-                    <input type="text" id="hoTen" name="hoTen" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;" required>
+                    <input value="<?php echo $data['hoTen']?>" type="text" id="hoTen" name="hoTen" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;" required>
                 </div>
                 <div style="margin-bottom: 15px;">
                     <label for="category" style="display: block; margin-bottom: 5px; font-weight: bold;">Trạng Thái Tài Khoản:</label>
-                    <input type="text" id="trangThaiTK" name="trangThaiTK" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;" required>
+                    <input value="<?php echo $data['trangThaiTK']?>" type="text" id="trangThaiTK" name="trangThaiTK" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 3px;" required>
                 </div>
-                <button name="btn_themTaiKhoan" type="submit" style="background-color: #4caf50; color: white; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer; font-size: 16px;">Gửi</button>
+                <button name="btn_suaTK" type="submit" style="background-color: #4caf50; color: white; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer; font-size: 16px;">Gửi</button>
             </form>
         </div>
     </div>

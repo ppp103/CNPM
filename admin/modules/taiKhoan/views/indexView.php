@@ -70,7 +70,7 @@ get_header();
                         
                         // Hiển thị dữ liệu
                         foreach ($paginationResult['data'] as $data) {
-                            $data['btn_suaSP'] = "?mod=taiKhoan&action=update&id={$data['id']}";
+                            $data['btn_suaTK'] = "?mod=taiKhoan&action=update&id={$data['id']}";
                             $data['btn_delete'] = "?mod=taiKhoan&action=xoa&id={$data['id']}";
                             $data['btn_phanquyen'] = "?mod=taiKhoan&action=phanquyen&id={$data['id']}";
                     ?>
@@ -113,7 +113,7 @@ get_header();
                             </td>
                             
                             <td class="text-right">
-                                <a href="<?php echo $data['btn_suaSP'] ?>" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                <a href="<?php echo $data['btn_suaTK'] ?>" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
                                     <i class="anticon anticon-edit"></i>
                                 </a>
                                 <a href="<?php echo $data['btn_delete'] ?>"  class="btn btn-icon btn-hover btn-sm btn-rounded">
