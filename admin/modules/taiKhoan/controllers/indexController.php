@@ -13,19 +13,23 @@ function indexAction()
 }
 
 function themAction() {
-    if(isset($_POST['btn_themTap'])) {
-        $soTap = $_POST['soTap'];
-        $noiDung = $_POST['noiDung'];
-        $tenSach = $_POST['tenSach'];
-        $anh = $_POST['anh'];
+    if(isset($_POST['btn_themTaiKhoan'])) {
+        $tenDangNhap = $_POST['tenDangNhap'];
+        $hashedPassword = md5($_POST['matKhau']);
+        $email = $_POST['email'];
+        $dienThoai = $_POST['dienThoai'];
+        $hoTen = $_POST['hoTen'];
+        $trangThaiTK = $_POST['trangThaiTK'];
         $data = [  
-        'soTap' => $soTap,
-        'noiDung' => $noiDung,
-        'sach_id' => $tenSach,
-        'anh' => $anh,
+        'tenDangNhap' => $tenDangNhap,
+        'matKhau' => $hashedPassword,
+        'email' => $email,
+        'dienThoai' => $dienThoai,
+        'hoTen' => $hoTen,
+        'trangThaiTK' => $trangThaiTK,
         ];
         ThemTaiKhoan($data);
-        redirect('?mod=tap&action=index');
+        redirect('?mod=taiKhoan&action=index');
     }
     load_view('them');
 }
@@ -53,6 +57,32 @@ function phanquyenAction() {
     }
     load_view('phanquyen');
 }
+
+
+function updateAction() {
+    $id = $_GET['id'];
+    
+    if(isset($_POST['btn_suaTK'])) {
+        $tenDangNhap = $_POST['tenDangNhap'];
+        $hashedPassword = md5($_POST['matKhau']);
+        $email = $_POST['email'];
+        $dienThoai = $_POST['dienThoai'];
+        $hoTen = $_POST['hoTen'];
+        $trangThaiTK = $_POST['trangThaiTK'];
+        $data = [  
+        'tenDangNhap' => $tenDangNhap,
+        'matKhau' => $hashedPassword,
+        'email' => $email,
+        'dienThoai' => $dienThoai,
+        'hoTen' => $hoTen,
+        'trangThaiTK' => $trangThaiTK,
+        ];
+        SuaTK($data, $id);
+        redirect('?mod=taiKhoan&action=index');
+    }
+    load_view('update');
+}
+
 
 function xoaAction() {
     load_view('xoa');
