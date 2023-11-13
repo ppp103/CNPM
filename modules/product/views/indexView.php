@@ -28,9 +28,12 @@ get_header();
                                     <nav class="pagination__nav" style="text-align: center;" aria-label="Page navigation example">
                                         <ul class="pagination justify-content-center">
                                             <?php
-                                            for ($i = 1; $i <= $total_page; $i++) {
-                                                $isActive = ($i == $page) ? "active" : "";
-                                                echo "<li class='page-item $isActive'><a class='page-link' href='?mod=product&page=$i&search=$search'>$i</a></li>";
+                                            if ($total_page <= 1) echo "";
+                                            else {
+                                                for ($i = 1; $i <= $total_page; $i++) {
+                                                    $isActive = ($i == $page) ? "active" : "";
+                                                    echo "<li class='page-item $isActive'><a class='page-link' href='?mod=product&page=$i&search=$search'>$i</a></li>";
+                                                }
                                             }
                                             ?>
                                         </ul>

@@ -17,10 +17,10 @@ get_header();
                         <h2>Bản phát hành mới nhất 2017</h2>
                         <div class="tg-description">
                             <p>
-                            Consectetur adipisicing elit sed do eiusmod tạm thời
-                                 sự cố xảy ra trong một câu chuyện lớn. Ut enim quảng cáo tối thiểu
-                                 veniam, quis nostrud kích thích ullamcoiars nisi ut
-                                 hàng hóa aliquip.
+                                Consectetur adipisicing elit sed do eiusmod tạm thời
+                                sự cố xảy ra trong một câu chuyện lớn. Ut enim quảng cáo tối thiểu
+                                veniam, quis nostrud kích thích ullamcoiars nisi ut
+                                hàng hóa aliquip.
                             </p>
                         </div>
                         <div class="tg-btns">
@@ -44,10 +44,10 @@ get_header();
                         <h2>Bản phát hành mới nhất 2017</h2>
                         <div class="tg-description">
                             <p>
-                            Consectetur adipisicing elit sed do eiusmod tạm thời
-                                 sự cố xảy ra trong một câu chuyện lớn. Ut enim quảng cáo tối thiểu
-                                 veniam, quis nostrud kích thích ullamcoiars nisi ut
-                                 hàng hóa aliquip.
+                                Consectetur adipisicing elit sed do eiusmod tạm thời
+                                sự cố xảy ra trong một câu chuyện lớn. Ut enim quảng cáo tối thiểu
+                                veniam, quis nostrud kích thích ullamcoiars nisi ut
+                                hàng hóa aliquip.
                             </p>
                         </div>
                         <div class="tg-btns">
@@ -99,7 +99,7 @@ get_header();
                             <div class="tg-status">
                                 <div class="tg-statuscontent">
                                     <span class="tg-statusicon"><i class="icon-heart"></i></span>
-                                    <h2>Người dùng hạnh phúc:<span>1,267,539</span></h2>
+                                    <h2>Người dùng hài lòng:<span>1,267,539</span></h2>
                                 </div>
                             </div>
                         </div>
@@ -120,63 +120,62 @@ get_header();
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="tg-sectionhead">
                         <h2><span>Sự lựa chọn của mọi người</span>Sách bán chạy nhất</h2>
-                        <a  class="tg-btn" href="javascript:void(0);">Xem tất cả</a>
+                        <a class="tg-btn" href="javascript:void(0);">Xem tất cả</a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div id="tg-bestsellingbooksslider" class="tg-bestsellingbooksslider tg-bestsellingbooks owl-carousel">
-                    <?php
-                    foreach ($books as $book) {
-                    ?>
-                    <form method="post" action="?mod=cart">
-                      <input id="MaSach" name="id" data-id="<?php echo $book['id'] ?>" type="hidden" value="<?php echo $book['id'] ?>"/>
-                                                            <input type="hidden" name="anh" value="<?php echo $book['anh'] ?>"/>
-                                                            <input type="hidden" name="tenSach" value="<?php echo $book['tenSach'] ?>"/>
-                                                            <input type="hidden" name="giaBan" value="<?php echo $book['giaBan']?>" />
-                                                            <input type="hidden" name="soluong" value="1">
+                        <?php
+                        foreach ($books as $book) {
+                        ?>
+                            <form method="post" action="?mod=cart">
+                                <input id="MaSach" name="id" data-id="<?php echo $book['id'] ?>" type="hidden" value="<?php echo $book['id'] ?>" />
+                                <input type="hidden" name="anh" value="<?php echo $book['anh'] ?>" />
+                                <input type="hidden" name="tenSach" value="<?php echo $book['tenSach'] ?>" />
+                                <input type="hidden" name="giaBan" value="<?php echo $book['giaBan'] ?>" />
+                                <input type="hidden" name="soluong" value="1">
 
-                    <div class="item">
-                            <div class="tg-postbook tg-notag">
-                                <figure class="tg-featureimg">
-                                    <div class="tg-bookimg">
-                                        <div class="tg-frontcover">
-                                            <img src="public/images/books/<?php echo $book['anh'] ?>" alt="image description">
-                                        </div>
-                                        <div class="tg-backcover">
-                                            <img src="public/images/books/<?php echo $book['anh'] ?>" alt="image description">
+                                <div class="item">
+                                    <div class="tg-postbook tg-notag">
+                                        <figure class="tg-featureimg">
+                                            <div class="tg-bookimg">
+                                                <div class="tg-frontcover">
+                                                    <img src="public/images/books/<?php echo $book['anh'] ?>" alt="image description">
+                                                </div>
+                                                <div class="tg-backcover">
+                                                    <img src="public/images/books/<?php echo $book['anh'] ?>" alt="image description">
+                                                </div>
+                                            </div>
+                                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                                                <i class="icon-heart"></i>
+                                                <span>Ưa thích</span>
+                                            </a>
+                                        </figure>
+                                        <div class="tg-postbookcontent">
+                                            <ul class="tg-bookscategories">
+                                                <li><a href="javascript:void(0);"><?php echo $book['tenTheLoai'] ?></a></li>
+                                            </ul>
+                                            <div class="tg-booktitle">
+                                                <h3>
+                                                    <a href="javascript:void(0);"><?php echo $book['tenSach'] ?></a>
+                                                </h3>
+                                            </div>
+                                            <span class="tg-bookwriter">Bởi:
+                                                <a href="javascript:void(0);"><?php echo $book['tenTacGia'] ?></a></span>
+                                            <span class="tg-stars"><span></span></span>
+                                            <span class="tg-bookprice">
+                                                <ins><?php echo number_format($book['giaBan'], 0, '.', ',') ?></ins>
+                                                <del><?php echo number_format($book['giaBan'] * 1.2, 0, '.', ',') ?></del>
+                                            </span>
+                                            <input class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="@sp.MaSach" name="addcart" type="submit" value="Đặt Hàng" />
                                         </div>
                                     </div>
-                                    <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                        <i class="icon-heart"></i>
-                                        <span>Ưa thích</span>
-                                    </a>
-                                </figure>
-                                <div class="tg-postbookcontent">
-                                    <ul class="tg-bookscategories">
-                                        <li><a href="javascript:void(0);"><?php echo $book['tenTheLoai'] ?></a></li>
-                                        <li><a href="javascript:void(0);"><?php echo $book['tenTheLoai'] ?></a></li>
-                                    </ul>
-                                    <div class="tg-booktitle">
-                                        <h3>
-                                            <a href="javascript:void(0);"><?php echo $book['tenSach'] ?></a>
-                                        </h3>
-                                    </div>
-                                    <span class="tg-bookwriter">Bởi:
-                                        <a href="javascript:void(0);"><?php echo $book['tenTacGia'] ?></a></span>
-                                    <span class="tg-stars"><span></span></span>
-                                    <span class="tg-bookprice">
-                                        <ins><?php echo number_format($book['giaBan'], 0, '.', ',') ?></ins>
-                                        <del><?php echo number_format($book['giaBan'], 0, '.', ',') ?></del>
-                                    </span>
-                                    <input class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="@sp.MaSach" name="addcart"  type="submit" value="Đặt Hàng"/>
                                 </div>
-                            </div>
-                        </div>
-                    </form>
-                    <?php 
-                    }
-                    ?>
-                       
+                            </form>
+                        <?php
+                        }
+                        ?>
+
                     </div>
                 </div>
             </div>
@@ -188,50 +187,50 @@ get_header();
     <!--************************************
 					Featured Item Start
 			*************************************-->
-            <form method="post" action="?mod=cart">
-                      <input id="MaSach" name="id" data-id="<?php echo $book['id'] ?>" type="hidden" value="<?php echo $firstbook['id'] ?>"/>
-                                                            <input type="hidden" name="anh" value="<?php echo $firstbook['anh'] ?>"/>
-                                                            <input type="hidden" name="tenSach" value="<?php echo $firstbook['tenSach'] ?>"/>
-                                                            <input type="hidden" name="giaBan" value="<?php echo $firstbook['giaBan']?>" />
-                                                            <input type="hidden" name="soluong" value="1">
+    <form method="post" action="?mod=cart">
+        <input id="MaSach" name="id" data-id="<?php echo $book['id'] ?>" type="hidden" value="<?php echo $firstbook['id'] ?>" />
+        <input type="hidden" name="anh" value="<?php echo $firstbook['anh'] ?>" />
+        <input type="hidden" name="tenSach" value="<?php echo $firstbook['tenSach'] ?>" />
+        <input type="hidden" name="giaBan" value="<?php echo $firstbook['giaBan'] ?>" />
+        <input type="hidden" name="soluong" value="1">
 
-   <section class="tg-bglight tg-haslayout">
-        <div class="container">
-            <div class="row">
-                <div class="tg-featureditm">
-                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
-                        <figure>
-                            <img style="width:350px; height:400px;" src="public/images/books/<?php echo $firstbook['anh'] ?>" alt="image description" />
-                        </figure>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                        <div class="tg-featureditmcontent">
-                            <div class="tg-themetagbox">
-                                <span class="tg-themetag">Đặc sắc</span>
-                            </div>
-                            <div class="tg-booktitle">
-                                <h3>
-                                    <a href="javascript:void(0);"><?php echo $firstbook['tenSach'] ?></a>
-                                </h3>
-                            </div>
-                            <span class="tg-bookwriter"> Bởi :
-                                <a href="javascript:void(0);"><?php echo $firstbook['tenTacGia'] ?></a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <div class="tg-priceandbtn">
-                                <span class="tg-bookprice">
-                                    <ins><?php echo number_format($firstbook['giaBan'], 0, '.', ',') ?></ins>
-                                    <del><?php echo number_format($firstbook['giaBan'], 0, '.', ',') ?></del>
-                                </span>
-                                <input class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="@sp.MaSach" name="addcart"  type="submit" value="Đặt Hàng"/>
+        <section class="tg-bglight tg-haslayout">
+            <div class="container">
+                <div class="row">
+                    <div class="tg-featureditm">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
+                            <figure>
+                                <img style="width:350px; height:400px;" src="public/images/books/<?php echo $firstbook['anh'] ?>" alt="image description" />
+                            </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                            <div class="tg-featureditmcontent">
+                                <div class="tg-themetagbox">
+                                    <span class="tg-themetag">Đặc sắc</span>
+                                </div>
+                                <div class="tg-booktitle">
+                                    <h3>
+                                        <a href="javascript:void(0);"><?php echo $firstbook['tenSach'] ?></a>
+                                    </h3>
+                                </div>
+                                <span class="tg-bookwriter"> Bởi :
+                                    <a href="javascript:void(0);"><?php echo $firstbook['tenTacGia'] ?></a></span>
+                                <span class="tg-stars"><span></span></span>
+                                <div class="tg-priceandbtn">
+                                    <span class="tg-bookprice">
+                                        <ins><?php echo number_format($firstbook['giaBan'], 0, '.', ',') ?> VNĐ</ins>
+                                        <del><?php echo number_format($firstbook['giaBan'] * 1.2, 0, '.', ',') ?> VNĐ</del>
+                                    </span>
+                                    <input class="tg-btn tg-btnstyletwo add-to-cart" data-maSach="@sp.MaSach" name="addcart" type="submit" value="Đặt Hàng" />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     </form>
-  
+
 
 
     <!--************************************
@@ -246,64 +245,63 @@ get_header();
                 <div class="tg-newrelease">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                         <div class="tg-sectionhead">
-                            <h2><span>Nếm thử gia vị mới</span>Sách phát hành mới</h2>
+                            <h2><span>Nếm thử gia vị mới</span>Sách mới</h2>
                         </div>
                         <div class="tg-description">
                             <p>
                                 Consectetur adipisicing elit sed do eiusmod tạm thời
-                                 sự cố xảy ra với toloregna aliqua. Ut enim quảng cáo tối thiểu
-                                 veniam, quis nostrud kích thích ullamcoiars nisiuip
-                                 commodo consequat aute irure dolor in aprehenderit aveli
-                                 esseati cillum dolor fugiat nulla pariatur cepteur sint
-                                 thỉnh thoảng cupidatat.
+                                sự cố xảy ra với toloregna aliqua. Ut enim quảng cáo tối thiểu
+                                veniam, quis nostrud kích thích ullamcoiars nisiuip
+                                commodo consequat aute irure dolor in aprehenderit aveli
+                                esseati cillum dolor fugiat nulla pariatur cepteur sint
+                                thỉnh thoảng cupidatat.
                             </p>
                         </div>
                         <div class="tg-btns">
-                            <a class="tg-btn tg-active" href="javascript:void(0);">View All</a>
+                            <a class="tg-btn tg-active" href="javascript:void(0);">Xem tất cả</a>
                             <a class="tg-btn" href="javascript:void(0);">Đọc thêm</a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                         <div class="row">
                             <div class="tg-newreleasebooks">
-                                <?php 
-                                      foreach ($selectedBooks as $selectedBooks) {
+                                <?php
+                                foreach ($selectedBooks as $selectedBooks) {
                                 ?>
-                                <div class="col-xs-4 col-sm-4 col-md-3 col-lg-4 hidden-md">
-                                    <div class="tg-postbook">
-                                        <figure class="tg-featureimg">
-                                            <div class="tg-bookimg">
-                                                <div class="tg-frontcover">
-                                                    <img src="public/images/books/<?php echo $selectedBooks['anh'] ?>" alt="image description" />
+                                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-4 hidden-md">
+                                        <div class="tg-postbook">
+                                            <figure class="tg-featureimg">
+                                                <div class="tg-bookimg">
+                                                    <div class="tg-frontcover">
+                                                        <img src="public/images/books/<?php echo $selectedBooks['anh'] ?>" alt="image description" />
+                                                    </div>
+                                                    <div class="tg-backcover">
+                                                        <img src="public/images/books/<?php echo $selectedBooks['anh'] ?><" alt="image description" />
+                                                    </div>
                                                 </div>
-                                                <div class="tg-backcover">
-                                                    <img src="public/images/books/<?php echo $selectedBooks['anh'] ?><" alt="image description" />
+                                                <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                                                    <i class="icon-heart"></i>
+                                                    <span>Ưa thích</span>
+                                                </a>
+                                            </figure>
+                                            <div class="tg-postbookcontent">
+                                                <ul class="tg-bookscategories">
+                                                    <li>
+                                                        <a href="javascript:void(0);"><?php echo $selectedBooks['tenTheLoai'] ?></a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tg-booktitle">
+                                                    <h3>
+                                                        <a href="javascript:void(0);"><?php echo $selectedBooks['tenSach'] ?></a>
+                                                    </h3>
                                                 </div>
+                                                <span class="tg-bookwriter">Bởi:
+                                                    <a href="javascript:void(0);"><?php echo $selectedBooks['tenTacGia'] ?></a></span>
+                                                <span class="tg-stars"><span></span></span>
                                             </div>
-                                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                                <i class="icon-heart"></i>
-                                                <span>Ưa thích</span>
-                                            </a>
-                                        </figure>
-                                        <div class="tg-postbookcontent">
-                                            <ul class="tg-bookscategories">
-                                                <li>
-                                                    <a href="javascript:void(0);"><?php echo $selectedBooks['tenTheLoai'] ?></a>
-                                                </li>
-                                                <li><a href="javascript:void(0);"><?php echo $selectedBooks['tenTheLoai'] ?></a></li>
-                                            </ul>
-                                            <div class="tg-booktitle">
-                                                <h3>
-                                                    <a href="javascript:void(0);"><?php echo $selectedBooks['tenSach'] ?></a>
-                                                </h3>
-                                            </div>
-                                            <span class="tg-bookwriter">Bởi:
-                                                <a href="javascript:void(0);"><?php echo $selectedBooks['tenTacGia'] ?></a></span>
-                                            <span class="tg-stars"><span></span></span>
                                         </div>
                                     </div>
-                                </div>
-                                <?php }?>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -387,45 +385,45 @@ get_header();
                     </div>
                 </div>
                 <div id="tg-pickedbyauthorslider" class="tg-pickedbyauthor tg-pickedbyauthorslider owl-carousel">
-                    <?php 
-                        foreach ($books as $book) {
+                    <?php
+                    foreach ($books as $book) {
                     ?>
-                    
-                    <div class="item">
-                        <div class="tg-postbook">
-                            <figure class="tg-featureimg">
-                                <div class="tg-bookimg">
-                                    <div class="tg-frontcover">
-                                        <img src="public/images/books/<?php echo $book['anh'] ?>" alt="image description" />
+
+                        <div class="item">
+                            <div class="tg-postbook">
+                                <figure class="tg-featureimg">
+                                    <div class="tg-bookimg">
+                                        <div class="tg-frontcover">
+                                            <img src="public/images/books/<?php echo $book['anh'] ?>" alt="image description" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="tg-hovercontent">
-                                    <div class="tg-description">
-                                        <p>
-                                          
-                                        </p>
+                                    <div class="tg-hovercontent">
+                                        <div class="tg-description">
+                                            <p>
+
+                                            </p>
+                                        </div>
+                                        <strong class="tg-bookpage">Book Pages: 206</strong>
+                                        <strong class="tg-bookcategory"><?php echo $book['tenTheLoai'] ?></strong>
+                                        <strong class="tg-bookprice">Giá Bán:<?php echo number_format($book['giaBan'], 0, '.', ',') ?>VNG </strong>
+                                        <div class="tg-ratingbox">
+                                            <span class="tg-stars"><span></span></span>
+                                        </div>
                                     </div>
-                                    <strong class="tg-bookpage">Book Pages: 206</strong>
-                                    <strong class="tg-bookcategory"><?php echo $book['tenTheLoai'] ?></strong>
-                                    <strong class="tg-bookprice">Giá Bán:<?php echo number_format($book['giaBan'], 0, '.', ',') ?>VNG </strong>
-                                    <div class="tg-ratingbox">
-                                        <span class="tg-stars"><span></span></span>
+                                </figure>
+                                <div class="tg-postbookcontent">
+                                    <div class="tg-booktitle">
+                                        <h3>
+                                            <a href="javascript:void(0);"><?php echo $book['tenSach'] ?></a>
+                                        </h3>
                                     </div>
+                                    <span class="tg-bookwriter">Bởi:
+                                        <a href="javascript:void(0);"><?php echo $book['tenTacGia'] ?></a></span>
+
                                 </div>
-                            </figure>
-                            <div class="tg-postbookcontent">
-                                <div class="tg-booktitle">
-                                    <h3>
-                                        <a href="javascript:void(0);"><?php echo $book['tenSach'] ?></a>
-                                    </h3>
-                                </div>
-                                <span class="tg-bookwriter">By:
-                                    <a href="javascript:void(0);"><?php echo $book['tenTacGia'] ?></a></span>
-                                
                             </div>
                         </div>
-                    </div>
-                    <?php }?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -448,9 +446,9 @@ get_header();
                                 </figure>
                                 <blockquote>
                                     <q>Consectetur adipisicing elit sed do eiusmod tạm thời
-                                         sự cố ut lao động tolore magna aliqua enim ad minim
-                                         veniam, quis nostrud kích thích ullamcoiars nisi ut
-                                         aliquip hàng hóa.</q>
+                                        sự cố ut lao động tolore magna aliqua enim ad minim
+                                        veniam, quis nostrud kích thích ullamcoiars nisi ut
+                                        aliquip hàng hóa.</q>
                                 </blockquote>
                                 <div class="tg-testimonialauthor">
                                     <h3>Holli Fenstermacher</h3>
@@ -478,9 +476,9 @@ get_header();
                                 </figure>
                                 <blockquote>
                                     <q>Consectetur adipisicing elit sed do eiusmod tạm thời
-                                         sự cố ut lao động tolore magna aliqua enim ad minim
-                                         veniam, quis nostrud kích thích ullamcoiars nisi ut
-                                         hàng hóa aliquip.</q>
+                                        sự cố ut lao động tolore magna aliqua enim ad minim
+                                        veniam, quis nostrud kích thích ullamcoiars nisi ut
+                                        hàng hóa aliquip.</q>
                                 </blockquote>
                                 <div class="tg-testimonialauthor">
                                     <h3>Holli Fenstermacher</h3>
@@ -507,7 +505,7 @@ get_header();
                         <h2>
                             <span>Tâm trí mạnh mẽ đằng sau chúng ta</span>Tác giả được yêu thích nhất
                         </h2>
-                        <a class="tg-btn" href="javascript:void(0);">View All</a>
+                        <a class="tg-btn" href="javascript:void(0);">Xem tất cả</a>
                     </div>
                 </div>
                 <div id="tg-authorsslider" class="tg-authors tg-authorsslider owl-carousel">
@@ -517,7 +515,7 @@ get_header();
                         </figure>
                         <div class="tg-authorcontent">
                             <h2><a href="javascript:void(0);">Jude Morphew</a></h2>
-                            <span>21,658 Published Books</span>
+                            <span>21,658 Sách xuất bản</span>
                             <ul class="tg-socialicons">
                                 <li class="tg-facebook">
                                     <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
@@ -537,7 +535,7 @@ get_header();
                         </figure>
                         <div class="tg-authorcontent">
                             <h2><a href="javascript:void(0);">Book Burger</a></h2>
-                            <span>20,257 Published Books</span>
+                            <span>20,257 Sách xuất bản</span>
                             <ul class="tg-socialicons">
                                 <li class="tg-facebook">
                                     <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
@@ -559,7 +557,7 @@ get_header();
                             <h2>
                                 <a href="javascript:void(0);">Book Ship &amp; Co.</a>
                             </h2>
-                            <span>15,686 Published Books</span>
+                            <span>15,686 Sách xuất bản</span>
                             <ul class="tg-socialicons">
                                 <li class="tg-facebook">
                                     <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
@@ -579,7 +577,7 @@ get_header();
                         </figure>
                         <div class="tg-authorcontent">
                             <h2><a href="javascript:void(0);">Enoch Gallion</a></h2>
-                            <span>12,435 Published Books</span>
+                            <span>12,435 Sách xuất bản</span>
                             <ul class="tg-socialicons">
                                 <li class="tg-facebook">
                                     <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
@@ -599,7 +597,7 @@ get_header();
                         </figure>
                         <div class="tg-authorcontent">
                             <h2><a href="javascript:void(0);">Book House</a></h2>
-                            <span>15,953 Published Books</span>
+                            <span>15,953 Sách xuất bản</span>
                             <ul class="tg-socialicons">
                                 <li class="tg-facebook">
                                     <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
@@ -619,7 +617,7 @@ get_header();
                         </figure>
                         <div class="tg-authorcontent">
                             <h2><a href="javascript:void(0);">Linnie Klimek</a></h2>
-                            <span>65,720 Published Books</span>
+                            <span>65,720 Sách xuất bản</span>
                             <ul class="tg-socialicons">
                                 <li class="tg-facebook">
                                     <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
@@ -641,7 +639,7 @@ get_header();
                             <h2>
                                 <a href="javascript:void(0);">Book Ship &amp; Co.</a>
                             </h2>
-                            <span>15,686 Published Books</span>
+                            <span>15,686 Sách xuất bản</span>
                             <ul class="tg-socialicons">
                                 <li class="tg-facebook">
                                     <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
@@ -661,7 +659,7 @@ get_header();
                         </figure>
                         <div class="tg-authorcontent">
                             <h2><a href="javascript:void(0);">Enoch Gallion</a></h2>
-                            <span>12,435 Published Books</span>
+                            <span>12,435 Sách xuất bản</span>
                             <ul class="tg-socialicons">
                                 <li class="tg-facebook">
                                     <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
@@ -691,7 +689,7 @@ get_header();
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="tg-calltoaction">
-                            <h2>Open Discount For All</h2>
+                            <h2>Giảm giá tất cả các đầu sách</h2>
                             <h3>
                                 Consectetur adipisicing elit sed do eiusmod tempor
                                 incididunt ut labore et dolore.
@@ -709,7 +707,7 @@ get_header();
     <!--************************************
 					Latest News Start
 			*************************************-->
-   
+
     <!--************************************
 					Latest News End
 			*************************************-->

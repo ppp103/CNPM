@@ -36,8 +36,13 @@ function get_list_products($cateId, $pageNumber, $pageSize, $search)
 
 function get_product_by_id($id)
 {
-    $book = db_fetch_row("select sach.id, tenSach, sach.anh, giaBan, moTa, ngayCapNhat, soLuongCon, tenTheLoai, tenTacGia from sach join theloai on sach.theloai_id = theloai.id join tacgia on sach.tacgia_id = tacgia.id where sach.id = {$id}");
-    return $book;
+    $book = db_fetch_row("select sach.id, tenSach, sach.anh, tacGia.anh as anh_tac_gia,giaBan, moTa, ngayCapNhat, soLuongCon, tenTheLoai, tenTacGia from sach join theloai on sach.theloai_id = theloai.id join tacgia on sach.tacgia_id = tacgia.id where sach.id = {$id}");
+    $chaps = db_fetch_array("SELECT soTap, tap.anh as anh_tap, tenSach, tenTacGia, tenTheLoai, giaBan FROM tap join sach on tap.sach_id = sach.id join theloai on sach.theloai_id = theloai.id join tacgia on sach.tacgia_id = tacgia.id where sach_id = $id");
+    $data = [
+        'book' => $book,
+        'chaps' => $chaps,
+    ];
+    return $data;
 }
 
 function get_list_categories()

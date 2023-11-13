@@ -42,11 +42,14 @@ function indexAction()
 function detailAction()
 {
     $id = $_GET['id'];
-    $book = get_product_by_id($id);
+    $result = get_product_by_id($id);
+    $book = $result['book'];
+    $chaps = $result['chaps'];
     $categories = get_list_categories();
     $data = [
         'categories' => $categories,
         'book' => $book,
+        'chaps' => $chaps,
     ];
     load_view('detail', $data);
 }

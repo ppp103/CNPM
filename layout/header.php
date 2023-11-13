@@ -98,12 +98,12 @@
                                 <figure>
                                     <a href="javascript:void(0);"><img src="public/images/users/img-01.jpg" alt="image description" /></a>
                                 </figure>
-                                <span>Xin chào, 
+                                <span>Xin chào,
                                     <?php if (isset($_SESSION['tenDangNhap']) && $_SESSION['tenDangNhap'] !== null) {
                                         echo $_SESSION['tenDangNhap'];
                                     } else {
-                                        echo 'bạn hãy đăng nhập';
-                                    }?></span>
+                                        echo '<a href="admin?mod=users&action=login"> hãy đăng nhập</a>';
+                                    } ?></span>
                             </div>
                         </div>
                     </div>
@@ -171,7 +171,6 @@
 
                                         ?>
 
-
                                     </div>
                                     <div class="tg-minicartfoot">
 
@@ -238,7 +237,7 @@
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="?mod=tacgia">
+                                    <a href="?mod=author">
                                         Tác giả
                                     </a>
                                 </li>
@@ -250,7 +249,7 @@
                                 </li>
 
                                 <li class="menu-item">
-                                    <a href="?mod=lienhe">
+                                    <a href="?mod=contact">
                                         Liên hệ
 
                                     </a>

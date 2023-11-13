@@ -92,8 +92,8 @@ get_header();
                                                 <li><span>Format:</span><span>Bìa cứng</span></li>
                                                 <li><span>Trang:</span><span>528 pages</span></li>
                                                 <li><span>Kích thước:</span><span>153 x 234 x 43mm | 758g</span></li>
-                                                <li><span>Ngày xuất bản:</span><span>@Model.NgayCapNhat</span></li>
-                                                <li><span>Tác giả:</span><span>@Model.MaTgNavigation.TenTg</span></li>
+                                                <li><span>Ngày xuất bản:</span><span><?php echo $book['ngayCapNhat'] ?></span></li>
+                                                <li><span>Tác giả:</span><span><?php echo $book['tenTacGia'] ?></span></li>
                                                 <li><span>Ngôn ngữ:</span><span>Tiếng việt</span></li>
                                             </ul>
                                             <div class="tg-alsoavailable">
@@ -183,13 +183,13 @@ get_header();
                                             </div>
                                             <div class="tg-authorbox">
                                                 <figure class="tg-authorimg">
-                                                    <img src="public/Images/author/" alt="image description">
+                                                    <img src="public/images/author/<?php echo $book['anh_tac_gia']?>" alt="image description">
                                                 </figure>
                                                 <div class="tg-authorinfo">
                                                     <div class="tg-authorhead">
                                                         <div class="tg-leftarea">
                                                             <div class="tg-authorname">
-                                                                <h2>@Model.MaTgNavigation.TenTg</h2>
+                                                                <h2><?php echo $book['tenTacGia'] ?></h2>
                                                                 <span>Tác giả từ: 27 - 6 - 2017</span>
                                                             </div>
                                                         </div>
@@ -222,39 +222,46 @@ get_header();
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                             <div id="tg-relatedproductslider" class="tg-relatedproductslider tg-relatedbooks owl-carousel">
-                                                <div class="item">
-                                                    <div class="tg-postbook">
-                                                        <figure class="tg-featureimg">
-                                                            <div class="tg-bookimg">
-                                                                <div class="tg-frontcover"><img src="../images/books/" alt="image description"></div>
-                                                                <div class="tg-backcover"><img src="../images/books/" alt="image description"></div>
+                                                <?php
+                                                foreach ($chaps as $chap) {
+
+                                                ?>
+                                                    <div class="item">
+                                                        <div class="tg-postbook">
+                                                            <figure class="tg-featureimg">
+                                                                <div class="tg-bookimg">
+                                                                    <div class="tg-frontcover"><img src="public/images/books/<?php echo $chap['anh_tap'] ?>" alt="image description"></div>
+                                                                    <div class="tg-backcover"><img src="../images/books/" alt="image description"></div>
+                                                                </div>
+                                                                <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                                                                    <i class="icon-heart"></i>
+                                                                    <span>Yêu thích</span>
+                                                                </a>
+                                                            </figure>
+                                                            <div class="tg-postbookcontent">
+                                                                <ul class="tg-bookscategories">
+                                                                    <li><a href="javascript:void(0);"><?php echo $chap['tenTheLoai'] ?></a></li>
+                                                                </ul>
+                                                                <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
+                                                                <div class="tg-booktitle">
+                                                                    <h3><a><?php echo $chap['tenSach'] . " " . $chap['soTap'] ?></a></h3>
+                                                                </div>
+                                                                <span class="tg-bookwriter">Bởi: <a href="javascript:void(0);"><?php echo $chap['tenTacGia'] ?></a></span>
+                                                                <span class="tg-stars"><span></span></span>
+                                                                <span class="tg-bookprice">
+                                                                    <ins><?php echo number_format($chap['giaBan']) ?> VNĐ</ins>
+                                                                </span>
+                                                                <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
+                                                                    <i class="fa fa-shopping-basket"></i>
+                                                                    <em>Thêm vào giỏ</em>
+                                                                </a>
                                                             </div>
-                                                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                                                <i class="icon-heart"></i>
-                                                                <span>Yêu thích</span>
-                                                            </a>
-                                                        </figure>
-                                                        <div class="tg-postbookcontent">
-                                                            <ul class="tg-bookscategories">
-                                                                <li><a href="javascript:void(0);">@a.MaDmNavigation.TenDm</a></li>
-                                                            </ul>
-                                                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                                                            <div class="tg-booktitle">
-                                                                <h3><a asp-controller="Home" asp-action="ChiTietSanPham" asp-route-sac="@a.MaSach">@a.TenSach</a></h3>
-                                                            </div>
-                                                            <span class="tg-bookwriter">Bởi: <a href="javascript:void(0);">@a.MaTgNavigation.TenTg</a></span>
-                                                            <span class="tg-stars"><span></span></span>
-                                                            <span class="tg-bookprice">
-                                                                <ins>@a.GiaBan VNĐ</ins>
-                                                            </span>
-                                                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                                                <i class="fa fa-shopping-basket"></i>
-                                                                <em>Thêm vào giỏ</em>
-                                                            </a>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                <?php
+                                                }
 
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -279,5 +286,6 @@ get_header();
 <?php
 get_footer();
 // show_array($book);
-show_array($categories);
+// show_array($categories);
+show_array($chaps);
 ?>
