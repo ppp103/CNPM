@@ -54,9 +54,4 @@ function get_product_by_id($id)
     return $book;
 }
 
-function get_list_categories()
-{
-    $result = db_fetch_array("select * from theloai");
-    return $result;
-}
 ?>

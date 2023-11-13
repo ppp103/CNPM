@@ -18,7 +18,7 @@ function indexAction(){
             $taiKhoan = taikhoan_by_tenTK($_SESSION['tenDangNhap']);
             $taiKhoan_id = $taiKhoan['id'];
         } else {
-            header("Location: http://localhost/CNPM/admin/?mod=users&action=login");
+            header("Location: http://localhost:81/CNPM/admin/?mod=users&action=login");
         }
         $data = [  
             'ngayDat' => $ngayDat,

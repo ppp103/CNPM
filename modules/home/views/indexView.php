@@ -158,7 +158,7 @@ get_header();
                                     </ul>
                                     <div class="tg-booktitle">
                                         <h3>
-                                            <a href="javascript:void(0);"><?php echo $book['tenSach'] ?></a>
+                                            <a  href="<?php echo $book['url'] ?>"><?php echo $book['tenSach'] ?></a>
                                         </h3>
                                     </div>
                                     <span class="tg-bookwriter">Bởi:
@@ -211,7 +211,7 @@ get_header();
                             </div>
                             <div class="tg-booktitle">
                                 <h3>
-                                    <a href="javascript:void(0);"><?php echo $firstbook['tenSach'] ?></a>
+                                    <a href="<?php echo $firstbook['url'] ?>"><?php echo $firstbook['tenSach'] ?></a>
                                 </h3>
                             </div>
                             <span class="tg-bookwriter"> Bởi :
@@ -294,7 +294,7 @@ get_header();
                                             </ul>
                                             <div class="tg-booktitle">
                                                 <h3>
-                                                    <a href="javascript:void(0);"><?php echo $selectedBooks['tenSach'] ?></a>
+                                                    <a  href="<?php echo $selectedBooks['url'] ?>"><?php echo $selectedBooks['tenSach'] ?></a>
                                                 </h3>
                                             </div>
                                             <span class="tg-bookwriter">Bởi:
@@ -416,7 +416,7 @@ get_header();
                             <div class="tg-postbookcontent">
                                 <div class="tg-booktitle">
                                     <h3>
-                                        <a href="javascript:void(0);"><?php echo $book['tenSach'] ?></a>
+                                        <a  href="<?php echo $book['url'] ?>"><?php echo $book['tenSach'] ?></a>
                                     </h3>
                                 </div>
                                 <span class="tg-bookwriter">By:
