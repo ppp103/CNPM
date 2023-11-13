@@ -47,3 +47,8 @@ function update_loaitaikhoan_taikhoan($data, $id)
 {
     return db_update("loaitaikhoan_taikhoan", $data, "`taiKhoan_id`='$id'");
 }
+
+function SuaTK($data, $id) {
+    $where = "id = '$id'";
+    return db_update('taikhoan', $data, $where);
+}
